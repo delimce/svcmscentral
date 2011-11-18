@@ -1,0 +1,428 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+/*ESTILOS popup svcms*********************************************************************************************/
+td{text-align:left;}
+ 
+.body-popup {
+	background:#cecece url(http://www.svcmscentral.com/estilos-popups/fondo-popup-gris.jpg) repeat-x 0 100%;
+	background-attachment:fixed;
+	font-family:'Droid Sans', tahoma, arial,sans-serif;
+	padding: 10px;
+	box-shadow:1px 1px 4px #adadad;
+-moz-box-shadow:1px 1px 4px #adadad;
+-webkit-box-shadow:1px 1px 4px #adadad;
+-moz-background-size: 100% 100%;  
+ -o-background-size: 100% 100%;  
+ -webkit-background-size: 100% 100%;  
+ background-size: 100% 100%; 
+
+}
+.popup-instrucciones, .popup-mensajes {
+	color: #697783;
+	background-color: #fff ;
+	
+	margin: 0 0 10px 0;
+	padding: 10px;
+	font-size: 15px;
+	border: 1px solid #e0e1e4 ;
+	-moz-border-radius:10px;
+-webkit-border-radius:10px; 
+-khtml-border-radius:10px; 
+border-radius:10px; 
+box-shadow:1px 1px 4px rgba(0,0,0,0.2);
+-moz-box-shadow:1px 1px 4px rgba(0,0,0,0.2);
+-webkit-box-shadow:1px 1px 4px rgba(0,0,0,0.2);
+
+
+
+
+
+
+}
+.popup-titulo {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color: #cccfd2  ;
+	background-color: #e2e2e2;
+	font-size: 35px;
+	padding: 6px;
+	
+	-moz-border-radius:10px 10px 0 0;
+-webkit-border-radius:10px 10px 0 0; 
+-khtml-border-radius:10px 10px 0 0; 
+border-radius:10px 10px 0 0;
+margin:0 10px -3px 10px; 
+text-shadow:0 1px 1px #fff;
+text-transform:uppercase;
+}
+
+
+
+.popup-form-box {
+
+font-size: 13px;
+color: #818181;
+text-shadow:0 1px 1px rgba(255,255,255,1);
+
+	
+border: solid 1px #d2d2d2;  
+
+outline: 0;
+border-radius:5px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+-khtml-border-radius:5px; 
+
+-webkit-transition:all 0.3s ease-out;
+-moz-transition:all 0.3s ease-out;
+-o-transition:all 0.3s ease-out;
+ 
+background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #f3f3f3), to(#FFFFFF));  
+background: -moz-linear-gradient(top, #FFFFFF, #f3f3f3 1px, #FFFFFF 25px);
+filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f3f3f3', endColorstr='#ffffff'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f3f3f3', endColorstr='#ffffff')"; /* IE8 */
+zoom:1;
+
+box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	
+	
+padding:8px;
+margin:5px 5px 5px 0px;
+
+
+
+
+}
+
+
+.td-datotabla input{padding:5px;
+margin:2px;
+border-radius:5px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+-khtml-border-radius:5px;
+border: solid 1px #E5E5E5; 
+background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #f3f3f3), to(#FFFFFF));  
+background: -moz-linear-gradient(top, #FFFFFF, #f3f3f3 1px, #FFFFFF 25px);
+filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f3f3f3', endColorstr='#ffffff'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f3f3f3', endColorstr='#ffffff')"; /* IE8 */
+zoom:1;
+font-size: 13px;
+color: #818181;
+border: solid 1px #E5E5E5; 
+
+}
+
+
+
+
+.popup-form-box:hover {
+	border: 1px solid #c9c9c9;
+	padding:8px 15px 8px 8px;
+	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #eeeeee), to(#FFFFFF));  
+background: -moz-linear-gradient(top, #FFFFFF, #eeeeee 1px, #FFFFFF 25px);
+filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#eeeeee', endColorstr='#ffffff'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#eeeeee', endColorstr='#ffffff')"; /* IE8 */
+zoom:1;
+
+	
+
+}
+
+.popup-form-box:focus {
+	border: 1px solid #b5b5b5;
+	padding:8px 15px 8px 8px;
+	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #eeeeee), to(#FFFFFF));  
+background: -moz-linear-gradient(top, #FFFFFF, #eeeeee 1px, #FFFFFF 25px);
+filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#eeeeee', endColorstr='#ffffff'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#eeeeee', endColorstr='#ffffff')"; /* IE8 */
+zoom:1;
+box-shadow: rgba(0,0,0, 0.3) 0px 0px 8px;  
+-moz-box-shadow: rgba(0,0,0, 0.3) 0px 0px 8px;  
+-webkit-box-shadow: rgba(0,0,0, 0.3) 0px 0px 8px;
+
+
+	
+
+}
+
+form #interna tr{
+	background-color:transparent;
+	-webkit-transition:all 0.3s ease-out;
+  -moz-transition:all 0.3s ease-out;
+  -o-transition:all 0.3s ease-out;}
+
+form #interna tr:hover{
+	background-color:#f3f3f3;}
+
+
+
+.popup-form-title {
+	font-size: 13px;
+	color: #697783;
+	padding:5px 5px 5px 0px ;
+	text-align:left;
+
+
+
+
+}
+.popup-form-button {
+	font-size:Droid Sans,arial,helvetica;
+	 padding:10px;
+     color: #b9b9b9;  
+     text-decoration: none;  
+     font-size: 15px;  
+     text-align: center;  
+	 cursor:pointer;
+	 margin:10px 10px 0 0;
+      
+     /* BACKGROUND GRADIENTS */  
+     background: #000;  
+     background: -moz-linear-gradient(top, #575757, #2c2c2c 50%, #232323 51%, #000);  
+     background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #575757), color-stop(.5, #2c2c2c), color-stop(.5, #232323), to(#000));
+	 filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#575757', endColorstr='#232323'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#575757', endColorstr='#232323')"; /* IE8 */
+zoom:1;   
+  
+     /* BORDER RADIUS */  
+     -moz-border-radius: 7px;  
+     -webkit-border-radius: 7px;  
+     border-radius: 7px;  
+  
+     border: 1px solid #232323;  
+     border-top: 1px solid #606060;  
+  
+     /* TEXT SHADOW */  
+  
+     text-shadow: 0 -1px 1px black;  
+  
+    
+	 
+	 -webkit-transition:all 0.1s ease-out;
+  -moz-transition:all 0.1s ease-out;
+  -o-transition:all 0.1s ease-out; 
+    }  
+  
+     
+
+
+.popup-form-button:hover {
+
+ background: #b30035;  
+        background: -moz-linear-gradient(top, #b90004, #880003 50%, #750003 51%, #4f0002);  
+        background: -webkit-gradient(linear, left top, left bottombottom, color-stop(0, #ec0047), color-stop(.5, #c4003a), color-stop(.51, #b30035), to(#64001e)); 
+		filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ec0047', endColorstr='#b30035'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ec0047', endColorstr='#b30035')"; /* IE8 */
+zoom:1;  
+		border:#64001e 1px solid;
+		border-top:#b90004 1px solid;
+		 /* BOX SHADOW */  
+     -moz-box-shadow: 1px 1px 3px black;  
+     -webkit-box-shadow: 1px 1px 3px black;  
+     box-shadow: 1px 1px 3px black; 
+color:#ffffff;
+
+
+}
+
+.popup-form-button:active{-webkit-transform: scale(0.8,0.8); 
+-moz-transform: scale(0.8,0.8); 
+-o-transform: scale(0.8,0.8);
+-ms-transform: scale(0.8,0.8);
+-webkit-transition:all 0.1s ease-out;
+  -moz-transition:all 0.1s ease-out;
+  -o-transition:all 0.1s ease-out;}
+
+
+
+
+.popup-instrucciones p {
+	margin-top: 1px;
+	margin-right: 1px;
+	margin-bottom: 10px;
+	margin-left: 1px;
+}
+
+
+
+
+.textico{ font-size:10px;}
+
+
+.shoppingcart-td-total {
+	font-size: 13px;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 7px;
+}
+
+.shoppingcart-td-montos {
+	font-size: 13px;
+	text-align: left;
+	padding-left: 7px;
+}
+
+
+
+.pago-titulo {
+	font-size: 16px;
+	font-weight: bold;
+}
+.pago-container {
+	background-color: #FFFFFF;
+	margin: 5px 10px 10px 5px;
+	padding: 0px 0px 5px;
+	border: 1px solid #CFD1D6;
+	border-radius:5px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+-khtml-border-radius:5px;
+}
+.pago-banco {
+	font-size: 14px;
+	font-weight: bold;
+	color: #525252;
+	background-color: #d8d8d8;
+	padding: 3px;
+}
+.pago-nombre {
+	font-size: 14px;
+	padding: 3px;
+	
+}
+.pago-numero {
+	font-size: 15px;
+	letter-spacing: 2px;
+	color: #525252;
+	padding: 3px;
+}
+
+
+
+.nombre-de-producto {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+}
+
+
+a {
+	color: #000000;
+	text-decoration: none;
+}
+a:hover {
+	color: #CC3300;
+}
+
+
+
+.td-headertabla {
+	font-size: 13px;
+	display: table-cell;
+	vertical-align: bottom;
+	padding: 10px;
+	margin: 2px;
+	border-radius:5px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+-khtml-border-radius:5px;
+background-color:#d4d4d4;
+background: -moz-linear-gradient(top, #c1c1c1 0%, #d4d4d4 100%); /* Firefox 3.6 */
+background: -webkit-gradient(linear,left bottom,left top,color-stop(0%, #c1c1c1),color-stop(100%, #d4d4d4)); /* Safari & Chrome */
+filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#c1c1c1', endColorstr='#d4d4d4'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#c1c1c1', endColorstr='#d4d4d4')"; /* IE8 */
+zoom:1;
+box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+-moz-box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+-webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+color:#fff;
+text-shadow:0 1px 1px rgba(0,0,0,0.6);
+border-right:#bcbcbc solid 1px;
+border-bottom:#bcbcbc solid 1px;
+
+
+}
+
+.td-headertabla a{
+	color:#FFF;}
+
+
+.td-datotabla{
+	font-size: 12px;
+	display: table-cell;
+	padding: 7px;
+	margin: 5px;
+	border-radius:5px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+-khtml-border-radius:5px;
+background-color:#eaeaea;
+
+color:#666;
+text-shadow:0 1px 1px rgba(0,0,0,0.2);
+border-right:#e1e1e1 solid 1px;
+border-bottom:#e1e1e1 solid 1px;
+
+
+}
+
+
+
+
+
+
+
+.LV_validation_message{
+    font-weight:bold;
+    margin:0 0 0 5px;
+}
+
+.LV_valid {
+    color:#00CC00;
+	font-size:12px;
+}
+	
+.LV_invalid {
+    color:#CC0000;
+	font-size:12px;
+}
+    
+.LV_valid_field,
+input.LV_valid_field:hover, 
+input.LV_valid_field:active,
+textarea.LV_valid_field:hover, 
+textarea.LV_valid_field:active {
+    border: 1px solid #00CC00;
+}
+    
+.LV_invalid_field, 
+input.LV_invalid_field:hover, 
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover, 
+textarea.LV_invalid_field:active {
+    border: 1px solid #CC0000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*FIN ESTILOS popup svcms ******************************************************************************************/

@@ -1,0 +1,1 @@
+<div id="salir" style="position:absolute; left:769px; top:0px; width:115; height:10; z-index:2"><a href="/admin/salir.php" title="SALIR DEL SISTEMA!"><img src="/admin/trans.gif" width="115" height="10" border="0" alt="SALIR DEL SISTEMA!"></a></div>

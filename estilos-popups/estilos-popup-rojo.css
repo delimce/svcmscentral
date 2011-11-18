@@ -1,0 +1,237 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+/*ESTILOS popup svcms*********************************************************************************************/
+
+
+.body-popup {
+	background-attachment: fixed;
+	background-image: url(http://www.svcmscentral.com/estilos-popups/fondo-popup-rojo.jpg);
+	background-repeat: repeat-x;
+	background-attachment:fixed;
+	font-family:'Droid Sans', tahoma, arial,sans-serif;
+	margin: 0px;
+	padding: 0px;
+	background-color: #f5f1eb;
+	background-position: left bottom;
+}
+.popup-instrucciones {
+	margin: 0px 0px 10px;
+	color: #000000;
+	background-color: #FCF3F1;
+	padding: 10px;
+	font-size: 14px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #993300;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #993300;
+
+
+
+
+
+}
+.popup-titulo {
+	font-size: 35px;
+	color: #990000;
+	background-color: #FFFFFF;
+	padding: 6px;
+	background-image: url(http://www.svcmscentral.com/estilos-popups/form-button-bg9.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+
+
+}
+
+.popup-mensajes {
+	margin: 0px 0px 10px;
+	color: #6A6A6A;
+	background-color: #FFFFFF;
+	padding: 10px;
+	font-size: 17px;
+	text-align: center;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	font-weight: normal;
+
+
+
+}
+
+.popup-form-box {
+
+	font-size: 13px;
+	color: #000000;
+	border: 1px solid #cc4e27;
+		background-color: #fff;
+	padding: 5px;
+	margin:5px 5px 5px 0px;
+	background-image:url(http://www.svcmscentral.com/admin/fondo-form-box.jpg);
+	background-position:left top;
+	background-repeat:repeat-x;
+
+}
+.popup-form-title {
+	font-size: 13px;
+	font-weight: bold;
+	color: #990000;
+	padding:5px 5px 5px 0px ;
+
+
+
+}
+.popup-form-button {
+	font-size: 13px;
+	color: #990000;
+	background-color: #FFFFFF;
+	padding: 8px;
+	border: 1px solid #990000;
+	background-image: url(http://www.svcmscentral.com/estilos-popups/form-button-bg7.jpg);
+	background-repeat: repeat-x;
+	background-position: center bottom;
+	cursor:pointer;
+	border-radius:5px 5px 5px 5px;
+-moz-border-radius:5px 5px 5px 5px;
+-webkit-border-radius:5px 5px 5px 5px;
+-khtml-border-radius:5px 5px 5px 5px; 
+
+
+
+}
+
+.popup-form-button:hover {
+
+color: #fff;
+	background-color: #FFFFFF;
+	background-image: url(http://www.svcmscentral.com/admin/fondo-link-barra-inferior-on.jpg);
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	border-left: 1px solid #000;
+
+
+}
+
+
+
+
+
+.popup-instrucciones p {
+	margin-top: 1px;
+	margin-right: 1px;
+	margin-bottom: 10px;
+	margin-left: 1px;
+}
+
+
+
+
+
+
+
+.shoppingcart-td-total {
+	font-size: 13px;
+	font-weight: bold;
+	text-align: right;
+	padding: 6px;
+}
+
+.shoppingcart-td-montos {
+	font-size: 13px;
+	text-align: left;
+	padding-left: 7px;
+}
+
+
+
+
+
+
+.pago-titulo {
+	font-size: 16px;
+	font-weight: bold;
+}
+.pago-container {
+	background-color: #FFFFFF;
+	margin: 5px 10px 10px 5px;
+	padding: 0px 0px 5px;
+	border: 1px solid #ce8d74;
+}
+.pago-banco {
+	font-size: 14px;
+	font-weight: bold;
+	color: #1d1d1d;
+	background-color: #e7dbce;
+	padding: 3px;
+}
+.pago-nombre {
+	font-size: 14px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.pago-numero {
+	font-size: 15px;
+	letter-spacing: 2px;
+	color: #990000;
+	padding-left: 5px;
+}
+
+
+
+.nombre-de-producto {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+}
+
+
+a {
+	color: #990000;
+	text-decoration: none;
+}
+a:hover {
+	color: #000;
+}
+
+
+
+.td-headertabla {
+	font-size: 13px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	text-transform: none;
+	color: #990000;
+	font-weight: bold;
+	display: table-cell;
+	background-color: #f8f8f8;
+	vertical-align: bottom;
+	padding: 10px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CCCCCC;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	background-image: url(http://www.svcmscentral.com/estilos-popups/form-button-bg8.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	margin: 1px;
+}
+
+
+.td-datotabla{
+	font-size: 13px;
+	color: #666;
+	padding: 7px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CCCCCC;
+	text-align: left;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+}
+
+
+/*FIN ESTILOS popup svcms ******************************************************************************************/

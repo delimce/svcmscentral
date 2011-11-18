@@ -1,0 +1,1107 @@
+<style type="text/css">
+h1 {
+	font-size: 40px;
+	margin-top: 30px;
+color:#F00;
+}
+</style>
+
+
+
+
+
+
+<h1>usuario hace una nueva orden de compra - Admin</h1>
+
+<!-- subject -->
+$nombre_email ha realizado una nueva orden de compra en $url_empresa ! [ID: $orden_id]
+
+<!-- body -->
+<div id="container" style=" background-color:#F2F3F4; font-family:Tahoma, Geneva, sans-serif; font-size:12px;  margin:10px; padding:10px; border:#CCC solid 1px;"> 
+  <h3 style="margin:0; padding:5px; background-color:#CCC;">$nombre_email ha realizado una nueva orden de compra en el Web Site $url_empresa :</h3>
+
+
+
+<p>
+<b>Email del Usuario:</b> $email_send <br>
+<b>Monto de la Orden de Compra</b>: $montocompra <br>
+<b>N&uacute;mero de Identificaci&oacute;n de la Orden de Compra:</b> $orden_id <br>
+<b>Fecha de la Orden de Compra:</b> $fecha_orden <br>    
+
+</p>   
+
+
+
+
+
+<div style="text-align:center; background-color:#FFF;">
+
+<p align="center" style="margin:0 0 5px 0; padding:0; font-size:10px;"><a href="http://www.svcmscentral.com/" target="_blank" style="color:#039; text-decoration:none;"><img src="http://paginainteligente.net/SVimagenes/boton-admin.jpg" border="0" /><br/>
+Ingrese con su login y password a SVCMSCENTRAL.COM para <b>Atender las &oacute;rdenes de compra en su Web Site $url_empresa</b> </a></p>
+
+
+
+
+<a href="http://paginainteligente.net" target="_blank" title="Paginainteligente.net su manejador de contenidos web"> <img src="http://www.paginainteligente.net/sign/sign-email-pi3.jpg" border="0" alt="PaginaInteligente.net su manejador de contenidos web" style="margin-top:10px;"></a>
+
+
+
+</div>           
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- separador ######################################################################################################### -->
+<hr size="30" style=" margin-top:200px; background-color:#000;color:#000" />
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>usuario hace una nueva orden de compra - Usuario</h1>
+
+<!-- subject -->
+Su orden de compra #$orden_id realizada en $nombre_empresa est&aacute; siendo procesada
+
+<!-- body -->
+<div id="container" style=" background-color:#F2F3F4; font-family:Tahoma, Geneva, sans-serif; font-size:12px;  margin:10px; padding:10px; border:#CCC solid 1px;"> 
+  <h3 style="margin:0; padding:5px; background-color:#CCC;">&iexcl;Muchas gracias por su orden de compra!</h3>
+
+
+<p>&iexcl;Saludos $nombre_email!.  Su orden de compra realizada en el web site de $nombre_empresa, con fecha $fecha_orden ha sido recibida y ser&aacute; contestada en un lapso no mayor de 24 horas h&aacute;biles  por  nuestro personal. En cuanto verifiquemos todos los  datos pertinentes, nos pondremos en contacto con usted. </p> 
+
+<p>
+<strong>El monto de su orden es: $montocompra.</strong> Sin embargo, es probable que  puedan aplicar cargos o descuentos adicionales. Vamos a procesar su &oacute;rden y generar una  Factura Proforma Digital en la que detallaremos su compra y le informaremos de todos los detalles de la misma</p>
+
+
+<hr size=1 noshade>
+<p align="right">
+&iexcl;Muchas gracias por confiar en nosotros! <br>
+<a href="$url_empresa" target="_blank" style="color:#3B3B3B; text-decoration:none; font-size: 22px;">$nombre_empresa</a></p>          
+
+
+
+
+
+
+<hr size="1" noshade>
+<div style="text-align:center; background-color:#333; padding:2px;">
+<a href="http://paginainteligente.net" target="_blank"  style="color: #CCC; font-size:9px; text-decoration:none;"title="Paginainteligente.net su manejador de contenidos web">Dise&ntilde;o de P&aacute;ginas Web | Sistemas de Manejo de Contenido Web | <strong>PaginaInteligente.net</strong> </a></div>           
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- separador ######################################################################################################### -->
+<hr size="30" style=" margin-top:200px; background-color:#000;color:#000" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Orden de compra es revisada por el Admin</h1>
+
+<!-- subject -->
+Factura Digital #$orden_id para $nombre_email por la compra de $productos_orden en $nombre_empresa
+
+<!-- Body -->
+
+<div id="container" style="font-family:verdana; font-size:13px; padding:10px; border:#CCC solid 1px; background-color: #F0F0F0;">
+
+
+<div>
+<div style="margin-bottom:10px;">Saludos $nombre_email . Este es el detalle de la compra que  usted realiz&oacute; el d&iacute;a $fecha_orden y los cargos adicionales que debe pagar para que podamos procesar su compra. </div>
+
+
+
+</div>
+
+
+<div id="header" style="background-color:#EAEAEA; padding:5px;">
+
+<div id="empresa" style="font-size:30px; border-bottom:#CCC; border-bottom-style:solid; border-bottom-width:thin; ">$nombre_empresa</div>
+<div id="urlempresa" style="text-align:right; background-color:#B3C1D7;">$url_empresa &nbsp;&nbsp;&nbsp;&nbsp;  $email_empresa<br/>
+</div>
+
+
+
+<div id="datosempresa" style="font-size:10px; margin-top:5px;">
+<b>Rif:</b> $tifempresa<br/>
+<b>Direcci&oacute;n Fiscal:</b> $direccion_empresa <br/>
+<b>Tlfs:</b> $tlf_empresa
+</div>
+
+
+
+
+</div>
+
+
+<div id="cuerpo" style="background-color:#fff; padding:10px;">
+<div id="titulo" style="font-size:36px; color: #039; text-align:center; border-bottom:#CCC thin solid">Factura ProForma # $orden_id</div>
+
+<div id="datoscliente" style="text-align:right; padding:5px; color:#666;">
+<div id="nombrecliente" style="font-size:18px; font-weight:bold; margin:1px 0 0 0; color:#333;">Cliente: $nombre_email</div>
+
+<div id="datos" style="font-size:10px;">
+
+
+  <b>Cedula o Rif:</b> $rif &nbsp;&nbsp;&zwnj;&nbsp;&nbsp; 
+<b>Direccion Fiscal:</b> $cliente_dir , $cliente_tlf &nbsp;&nbsp;&zwnj;&nbsp;&nbsp;
+<b>E mail:</b> $email_send
+</div>
+
+</div>
+
+<div id="tituloorden" style="font-size:23px; margin:10px 0 0 0; color:#039;">Datos de la Operaci&oacute;n</div>
+<div id="fecha" style="font-size:10px;">Fecha de la orden de compra : $fecha_orden</div>
+
+<div id="datosorden" style="font-size:13px; margin:15px; padding:5px; border:#CCC solid 1px;">
+<div style="margin-bottom:5px;"><b>Productos en la orden de compra:</b> $productos_orden<br/></div>  
+<div style="margin-bottom:5px;"><b>Total Productos Ordenados:</b> $moneda_simbolo. $fact_subtotal1</div>
+<div style="margin-bottom:5px;"><b>Precio con descuento: </b>$moneda_simbolo. $fact_descuento</div>
+<div style="margin-bottom:5px;">&nbsp;</div>
+<div style="margin-bottom:5px;"><b>Recargos ($fact_mod_nombre) :</b> $fact_mod_signo $fact_mod_monto</div>
+<div style="margin-bottom:5px;"><b>Costo de Env&iacute;o: </b>$moneda_simbolo. $fact_envio</div>
+<div style="margin-bottom:5px;"><b>Sub Total + Recargos:</b> $moneda_simbolo. $fact_subtotal_con_recargos</div>
+<div style="margin-bottom:5px;">&nbsp;</div>
+<div style="margin-bottom:5px; text-align:right; font-size:18px;"><b>IVA: </b>$moneda_simbolo. $fact_iva</div>
+<div style="margin-bottom:5px; text-align:right; font-size:25px;"><b>Total a pagar:</b> $moneda_simbolo. $fact_total</div>
+
+<div id="cuentas" style="background-color:#CCC; font-size:18px; text-align:center; padding:10px;">
+<a href="$url_empresa/SV-popup-datos-pago.php" target="_blank" style="text-decoration:none; color: #0B47AC; ;"><b>Ver Cuentas Bancarias de $nombre_empresa </b></a>
+
+</div>
+
+
+
+<div id="mensajepago" style=" font-size:10px;text-align:center; padding:15px; margin:15px; border:#C00 solid 1px; font-weight:bold;">
+
+Para pagar esta factura, realice el pago en cualquiera de nuestras cuentas, luego dir&iacute;jase a <a href="$url_empresa" target="_blank">$url_empresa</a> y acceda con su  email registrado y contrase&ntilde;a; luego elija la orden de compra en cuesti&oacute;n y haga click en el bot&oacute;n "pagar ahora" para reportar el pago realizado y as&iacute; hacer efectiva su compra.
+
+
+
+
+</div>
+
+<div id="observacionestitulo" style="font-size:20px; padding-top:15px;">Observaciones:</div>
+<div id="observaciones" style="padding:10px; background-color: #EBEBEB;; font-size:14px;">$fact_obs</div>
+
+
+ 
+
+</div>
+
+
+<!-- termina cuerpo aqui -->
+</div>
+
+
+<div style="text-align:center; background-color:#333; padding:2px;">
+<a href="http://paginainteligente.net" target="_blank"  style="color: #CCC; font-size:9px; text-decoration:none;"title="Paginainteligente.net su manejador de contenidos web">Dise&ntilde;o de P&aacute;ginas Web | Sistemas de Manejo de Contenido Web | <strong>PaginaInteligente.net</strong> </a></div> 
+<!-- cierra container aqui abajo -->
+</div>
+
+
+
+
+
+<!-- separador ######################################################################################################### -->
+<hr size="30" style="color:#000" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Se registra un nuevo usuario - Admin</h1>
+
+<!-- subject -->
+$usern: Nuevo usuario registrado en $url_empresa
+
+<!-- body -->
+<div id="container" style=" background-color:#F2F3F4; font-family:Tahoma, Geneva, sans-serif; font-size:12px;  margin:10px; padding:10px; border:#CCC solid 1px;"> 
+  <h3 style="margin:0; padding:5px; background-color:#CCC;">$usern se acaba de registrar en  su  p&aacute;gina web $url_empresa </h3>
+
+
+
+<p>
+<b>Nombre del usuario:</b> $usern <br>
+<b>Email del usuario:</b> $usere <br>
+<b>Contraseña del usuario:</b> $claven 
+</p> 
+
+
+
+
+
+<div style="text-align:center; background-color:#FFF;">
+
+<p align="center" style="margin:0 0 5px 0; padding:0; font-size:10px;"><a href="http://www.svcmscentral.com/" target="_blank" style="color:#039; text-decoration:none;"><img src="http://paginainteligente.net/SVimagenes/boton-admin.jpg" border="0" /><br/>
+Ingrese con su login y password a SVCMSCENTRAL.COM para <b>manejar sus usuarios registrados en su Web Site $url_empresa</b> </a></p>
+
+
+
+
+<a href="http://paginainteligente.net" target="_blank" title="Paginainteligente.net su manejador de contenidos web"> <img src="http://www.paginainteligente.net/sign/sign-email-pi3.jpg" border="0" alt="PaginaInteligente.net su manejador de contenidos web" style="margin-top:10px;"></a>
+
+
+
+</div>           
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- separador ######################################################################################################### -->
+<hr size="30" style=" margin-top:200px; background-color:#000;color:#000" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Registro de usuario - Usuario</h1>
+
+<!-- subject -->
+Saludos $usern . Bienvenido a $url_empresa
+
+<!-- body -->
+<div id="container" style=" background-color:#F2F3F4; font-family:Tahoma, Geneva, sans-serif; font-size:12px;  margin:10px; padding:10px; border:#CCC solid 1px;"> 
+  
+
+<h3>&iexcl; Bienvenido a $nombre_empresa , $usern  !</h3>
+
+
+<p>
+Estos son los datos con los que se registr&oacute;: <br>
+<b>Su Email:</b> $usere <br>
+<b>Su Clave:</b> $claven
+</p>
+
+<p>Guarde estos datos, los necesitar&aacute; en todo momento que desee  ingresar a su secci&oacute;n privada en $url_empresa.</p>
+
+<p>
+Para Verificar y activar su cuenta por favor dir&iacute;jase al siguiente enlace : <a href="$url_empresa/SV-activacion.php?activar=$cod_activo" target="_blank"><b>ACTIVAR MI CUENTA...</b></a> <br>
+o copie y pegue este URL en una ventana nueva de su navegador:</p>
+
+<h4>$url_empresa/SV-activacion.php?activar=$cod_activo</h4>
+
+
+<hr size=1 noshade>
+<p align="right">
+&iexcl;Muchas gracias por confiar en nosotros! <br>
+<a href="$url_empresa" target="_blank" style="color:#3B3B3B; text-decoration:none; font-size: 22px;">$nombre_empresa</a></p>          
+
+
+
+
+
+
+<hr size="1" noshade>
+<div style="text-align:center; background-color:#333; padding:2px;">
+<a href="http://paginainteligente.net" target="_blank"  style="color: #CCC; font-size:9px; text-decoration:none;"title="Paginainteligente.net su manejador de contenidos web">Dise&ntilde;o de P&aacute;ginas Web | Sistemas de Manejo de Contenido Web | <strong>PaginaInteligente.net</strong> </a></div>           
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- separador ######################################################################################################### -->
+<hr size="30" style=" margin-top:200px; background-color:#000;color:#000" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Activar un usuario en EDITAR USUARIO</h1>
+
+<!-- subject -->
+$usern, Usted ha sido activado en $url_empresa como usuario registrado
+
+<!-- body -->
+<div id="container" style=" background-color:#F2F3F4; font-family:Tahoma, Geneva, sans-serif; font-size:12px;  margin:10px; padding:10px; border:#CCC solid 1px;"> 
+  
+
+<h3>&iexcl; Usted ha sido activado como usuario registrado en $url_empresa , $usern  !</h3>
+
+
+<p>
+Estos son los datos con los que se registr&oacute;: <br>
+<b>Su Email:</b> $usere <br>
+<b>Su Clave:</b> $claven
+</p>
+
+<p>Guarde estos datos, los necesitar&aacute; en todo momento que desee  ingresar a su secci&oacute;n privada en $url_empresa.</p>
+
+<p>
+Ahora usted podr&aacute; ingresar a nuestra secci&oacute;n de usuarios registrados para poder realizar las operaciones  exclusivas relativas a nuestros clientes como hacer &oacute;rdenes de compra, realizar pagos, escribir mensajes en nuestras p&aacute;ginas y solicitar soporte.
+</p>
+
+<h3>
+Para aceder a su cuenta y las funcionalidades de la misma, Ingrese su email registrado y clave en la secci&oacute;n para usuarios registrados en  <b><a href="$url_empresa" target="_blank">$url_empresa</a></b>
+</h3> 
+
+
+<hr size=1 noshade>
+<p align="right">
+&iexcl;Muchas gracias por confiar en nosotros! <br>
+<a href="$url_empresa" target="_blank" style="color:#3B3B3B; text-decoration:none; font-size: 22px;">$nombre_empresa</a></p>          
+
+
+
+
+
+
+<hr size="1" noshade>
+<div style="text-align:center; background-color:#333; padding:2px;">
+<a href="http://paginainteligente.net" target="_blank"  style="color: #CCC; font-size:9px; text-decoration:none;"title="Paginainteligente.net su manejador de contenidos web">Dise&ntilde;o de P&aacute;ginas Web | Sistemas de Manejo de Contenido Web | <strong>PaginaInteligente.net</strong> </a></div>           
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- separador ######################################################################################################### -->
+<hr size="30" style=" margin-top:200px; background-color:#000;color:#000" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Usuario hace un nuevo pago - Usuario</h1>
+
+<!-- subject -->
+$usern. Usted ha notificado un pago por $montop en $url_empresa
+
+<!-- body -->
+<div id="container" style=" background-color:#F2F3F4; font-family:Tahoma, Geneva, sans-serif; font-size:12px;  margin:10px; padding:10px; border:#CCC solid 1px;"> 
+  
+
+<p>Saludos. su pago ha sido registrado por nuestro sistema. En breve confirmaremos su estatus y le informaremos.</p>
+
+<h3>Estos son los datos de su pago:</h3>
+
+
+<ul>
+<li><b>Concepto o descripci&oacute;n del pago:</b> $concepton</li>
+<li><b>Banco:</b> $bancop</li>
+<li><b>Monto depositado:</b> $montop</li>
+<li><b>Fecha del pago:</b> $fechap       </li>    
+</ul>
+
+
+
+
+<hr size=1 noshade>
+<p align="right">
+&iexcl;Muchas gracias por confiar en nosotros! <br>
+<a href="$url_empresa" target="_blank" style="color:#3B3B3B; text-decoration:none; font-size: 22px;">$nombre_empresa</a></p>          
+
+
+
+
+
+
+<hr size="1" noshade>
+<div style="text-align:center; background-color:#333; padding:2px;">
+<a href="http://paginainteligente.net" target="_blank"  style="color: #CCC; font-size:9px; text-decoration:none;"title="Paginainteligente.net su manejador de contenidos web">Dise&ntilde;o de P&aacute;ginas Web | Sistemas de Manejo de Contenido Web | <strong>PaginaInteligente.net</strong> </a></div>           
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- separador ######################################################################################################### -->
+<hr size="30" style=" margin-top:200px; background-color:#000;color:#000" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Usuario reporta pago - Admin</h1>
+
+<!-- subject -->
+$usern ha notificado un pago por $montop en $url_empresa
+
+<!-- body -->
+<div id="container" style=" background-color:#F2F3F4; font-family:Tahoma, Geneva, sans-serif; font-size:12px;  margin:10px; padding:10px; border:#CCC solid 1px;"> 
+  <h3 style="margin:0; padding:5px; background-color:#CCC;">Felicidades, $usern ha reportado un pago en $url_empresa </h3>
+
+
+
+<p>
+<b>Nombre del Usuario:</b> $usern<br>
+<b>Email del Usuario:</b> $usere<br>
+<b>Concepto o Descripci&oacute;n del pago:</b> $concepton<br>
+<b>Banco donde se Realiz&oacute; el Pago:</b> $bancop<br>
+<b>Monto Depositado:</b> $montop<br>
+<b>Fecha del Pago:</b> $fechap<br>       
+
+</p>
+
+<p>Verifique que el pago se ha hecho efectivo (o no) y luego ingrese al panel de control svCMsCentral.com para aprobarlo o negarlo. Le recordamos que los mensajes de aprobaci&oacute;n  y negaci&oacute;n de pago pueden ser cambiados por usted desde la secci&oacute;n "Opciones / Mensajes autom&aacute;ticos"</p>
+
+
+
+<div style="text-align:center; background-color:#FFF;">
+
+<p align="center" style="margin:0 0 5px 0; padding:0; font-size:10px;"><a href="http://www.svcmscentral.com/" target="_blank" style="color:#039; text-decoration:none;"><img src="http://paginainteligente.net/SVimagenes/boton-admin.jpg" border="0" /><br/>
+Ingrese con su login y password a SVCMSCENTRAL.COM para <b>revisar, aceptar o negar pagos en  Web Site $url_empresa</b> </a></p>
+
+
+
+
+<a href="http://paginainteligente.net" target="_blank" title="Paginainteligente.net su manejador de contenidos web"> <img src="http://www.paginainteligente.net/sign/sign-email-pi3.jpg" border="0" alt="PaginaInteligente.net su manejador de contenidos web" style="margin-top:10px;"></a>
+
+
+
+</div>           
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- separador ######################################################################################################### -->
+<hr size="30" style=" margin-top:200px; background-color:#000;color:#000" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Pago aprobado - Usuario</h1>
+
+<!-- subject -->
+$nombre_email, su pago por por $montop , notificado en $url_empresa ha sido aprobado
+
+<!-- body -->
+<div id="container" style=" background-color:#F2F3F4; font-family:Tahoma, Geneva, sans-serif; font-size:12px;  margin:10px; padding:10px; border:#CCC solid 1px;"> 
+  
+
+
+
+<h3>&iexcl;Saludos $nombre_email !, su pago por por $montop , notificado en $url_empresa ha sido <span style="color:#060; font-weight:bold; font-size:20px;">APROBADO</span></h3>
+
+
+<p>Ahora procederemos a procesar la operaci&oacute;n por la cual usted ha pagado.</p>
+
+
+
+
+<hr size=1 noshade>
+<p align="right">
+&iexcl;Muchas gracias por confiar en nosotros! <br>
+<a href="$url_empresa" target="_blank" style="color:#3B3B3B; text-decoration:none; font-size: 22px;">$nombre_empresa</a></p>          
+
+
+
+
+
+
+<hr size="1" noshade>
+<div style="text-align:center; background-color:#333; padding:2px;">
+<a href="http://paginainteligente.net" target="_blank"  style="color: #CCC; font-size:9px; text-decoration:none;"title="Paginainteligente.net su manejador de contenidos web">Dise&ntilde;o de P&aacute;ginas Web | Sistemas de Manejo de Contenido Web | <strong>PaginaInteligente.net</strong> </a></div>           
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- separador ######################################################################################################### -->
+<hr size="30" style=" margin-top:200px; background-color:#000;color:#000" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Pago NEGADO - Usuario</h1>
+
+<!-- subject -->
+$nombre_email, su reporte de pago ha sido rechazado :-(
+
+<!-- body -->
+<div id="container" style=" background-color:#F2F3F4; font-family:Tahoma, Geneva, sans-serif; font-size:12px;  margin:10px; padding:10px; border:#CCC solid 1px;"> 
+  
+
+
+
+<p>Saludos! lamentamos informarle que su  pago su pago por por $montop , notificado en $url_empresa ha sido <strong>rechazado</strong>. Si usted est&aacute; seguro que realiz&oacute; el pago, por favor verifique:</p>
+<ul>
+<li>El monto que report&oacute; es el correcto</li>
+<li>La fecha en  la que realiz&oacute; el pago coincide con  la fecha que report&oacute;</li>
+<li>El banco donde realiz&oacute; el pago coincide con el que report&oacute;</li>
+<li>No hayan habido problemas del lado de su banco con su  dep&oacute;sito o transferencia</li>
+
+</ul>
+
+<p>Si ha verificado todos estos datos   y encontr&oacute; alg&uacuten error en el reporte del pago, puede volver a reportarlo correctamente; si por el contrario todo est&aacute; en orden, por favor cont&aacute;ctenos a trav&eacute;s de nuestro correo electr&oacute;nico para ahondar en el problema y resolverlo de la manera m&aacute;s efectiva posible</p>
+
+
+
+
+<hr size=1 noshade>
+<p align="right">
+&iexcl;Muchas gracias por confiar en nosotros! <br>
+<a href="$url_empresa" target="_blank" style="color:#3B3B3B; text-decoration:none; font-size: 22px;">$nombre_empresa</a></p>          
+
+
+
+
+
+
+<hr size="1" noshade>
+<div style="text-align:center; background-color:#333; padding:2px;">
+<a href="http://paginainteligente.net" target="_blank"  style="color: #CCC; font-size:9px; text-decoration:none;"title="Paginainteligente.net su manejador de contenidos web">Dise&ntilde;o de P&aacute;ginas Web | Sistemas de Manejo de Contenido Web | <strong>PaginaInteligente.net</strong> </a></div>           
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- separador ######################################################################################################### -->
+<hr size="30" style=" margin-top:200px; background-color:#000;color:#000" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Mensaje en una de las paginas - Admin</h1>
+
+<!-- subject -->
+&usern ha escrito un nuevo mensaje en $url_empresa
+
+<!-- body -->
+<div id="container" style=" background-color:#F2F3F4; font-family:Tahoma, Geneva, sans-serif; font-size:12px;  margin:10px; padding:10px; border:#CCC solid 1px;"> 
+  <h3 style="margin:0; padding:5px; background-color:#CCC;">El usuario $usern escribi&oacute; un mensaje en uno de las p&aacute;ginas de $url_empresa </h3>
+
+
+
+
+<div style="text-align:center; background-color:#FFF;">
+
+<p align="center" style="margin:0 0 5px 0; padding:0; font-size:10px;"><a href="http://www.svcmscentral.com/" target="_blank" style="color:#039; text-decoration:none;"><img src="http://paginainteligente.net/SVimagenes/boton-admin.jpg" border="0" /><br/>
+Ingrese con su login y password a SVCMSCENTRAL.COM para <b>Revisar y contestar los mensajes de su Web Site $url_empresa</b> </a></p>
+
+
+
+
+<a href="http://paginainteligente.net" target="_blank" title="Paginainteligente.net su manejador de contenidos web"> <img src="http://www.paginainteligente.net/sign/sign-email-pi3.jpg" border="0" alt="PaginaInteligente.net su manejador de contenidos web" style="margin-top:10px;"></a>
+
+
+
+</div>           
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- separador ######################################################################################################### -->
+<hr size="30" style=" margin-top:200px; background-color:#000;color:#000" />
+

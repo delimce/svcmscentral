@@ -1,0 +1,16 @@
+[03-Jul-2008 13:26:55] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/svcms/public_html/admin/banners/main.php on line 144
+[03-Jul-2008 13:29:24] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/svcms/public_html/admin/banners/main.php on line 144
+[03-Jul-2008 13:29:26] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/svcms/public_html/admin/banners/main.php on line 144
+[03-Jul-2008 13:29:28] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/svcms/public_html/admin/banners/main.php on line 144
+[03-Jul-2008 13:29:35] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/svcms/public_html/admin/banners/main.php on line 144
+[03-Jul-2008 13:29:49] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/svcms/public_html/admin/banners/main.php on line 144
+[03-Jul-2008 13:29:50] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/svcms/public_html/admin/banners/main.php on line 144
+[03-Jul-2008 13:29:50] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/svcms/public_html/admin/banners/main.php on line 144
+[03-Jul-2008 13:29:51] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/svcms/public_html/admin/banners/main.php on line 144
+[03-Jul-2008 13:29:54] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/svcms/public_html/admin/banners/main.php on line 144
+[30-Aug-2011 13:30:16] PHP Warning:  include(n-footer.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/svcmscen/public_html/admin/banners/main2.php on line 103
+[30-Aug-2011 13:30:16] PHP Warning:  include(n-footer.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/svcmscen/public_html/admin/banners/main2.php on line 103
+[30-Aug-2011 13:30:16] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'n-footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/svcmscen/public_html/admin/banners/main2.php on line 103
+[30-Aug-2011 13:30:17] PHP Warning:  mysql_fetch_assoc(): 11 is not a valid MySQL result resource in /home/svcmscen/public_html/admin/banners/main2.php on line 196
+[30-Aug-2011 13:30:38] PHP Warning:  mysql_fetch_assoc(): 11 is not a valid MySQL result resource in /home/svcmscen/public_html/admin/banners/main2.php on line 196
+[30-Aug-2011 13:31:51] PHP Warning:  mysql_fetch_assoc(): 11 is not a valid MySQL result resource in /home/svcmscen/public_html/admin/banners/main2.php on line 188

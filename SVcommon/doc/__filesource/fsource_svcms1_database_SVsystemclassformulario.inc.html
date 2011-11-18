@@ -1,0 +1,154 @@
+<div class='page_content'>
+        <h1>Source for file formulario.inc</h1>
+    <p>Documentation is available at <a rel="contents" href="svcms1/database/_SVsystem---class---formulario.inc.html">formulario.inc</a></p>
+    <div class="src-code">
+    <ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-comm">//&nbsp;llamando&nbsp;la&nbsp;super&nbsp;clase&nbsp;base&nbsp;de&nbsp;datos</span></div></li>
+<li><div class="src-line"><a name="a4"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-sym">!</span><a href="http://www.php.net/class_exists" rel="contents">class_exists</a><span class="src-sym">(</span><span class="src-str">'tools'</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a6"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a rel="contents" href="default/_SVsystem---class---remoteFunctions.php.html#functionincludeCommonClass">includeCommonClass</a><span class="src-sym">(</span><span class="src-str">'tools'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a8"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">&nbsp;*&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">&nbsp;*&nbsp;clase&nbsp;para&nbsp;la&nbsp;construccion&nbsp;de&nbsp;formularios&nbsp;y&nbsp;volcamiento&nbsp;de&nbsp;data&nbsp;proveniente&nbsp;de&nbsp;los&nbsp;mismos</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">&nbsp;*&nbsp;IMPORTANTE:&nbsp;por&nbsp;defecto&nbsp;se&nbsp;asume&nbsp;que&nbsp;se&nbsp;esta&nbsp;conectado&nbsp;a&nbsp;la&nbsp;base&nbsp;de&nbsp;datos</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-doc">&nbsp;*&nbsp;en&nbsp;caso&nbsp;de&nbsp;que&nbsp;desee&nbsp;llamar&nbsp;herramientas&nbsp;del&nbsp;tipo&nbsp;database</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@author</span><span class="src-doc">&nbsp;Desconocido</span></div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;svcms1</span></div></li>
+<li><div class="src-line"><a name="a16"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@subpackage</span><span class="src-doc">&nbsp;database</span></div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a18"></a><span class="src-key">class&nbsp;</span><a rel="contents" href="svcms1/database/formulario.html">formulario</a>&nbsp;<span class="src-key">extends&nbsp;&nbsp;</span><a rel="contents" href="svcms1/database/tools.html">tools</a>&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a19"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a20"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//**********************************************atributos</span></div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">/**********************************************&nbsp;CONSTRUCTOR&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a rel="contents" href="svcms1/database/formulario.html#method__construct">__construct</a>&nbsp;<span class="src-sym">(</span><span class="src-var">$conect</span>=<span class="src-str">''</span><span class="src-sym">)</span><span class="src-sym">{&nbsp;</span><span class="src-comm">///constructor&nbsp;de&nbsp;la&nbsp;clase</span></div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$conect</span><span class="src-sym">))</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a rel="contents" href="svcms1/database/database.html#methodautoconexion">autoconexion</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//*********************************************&nbsp;metodos&nbsp;de&nbsp;formulario</span></div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">/*&nbsp;metodo&nbsp;para&nbsp;obtener&nbsp;variables&nbsp;de&nbsp;formularios&nbsp;de&nbsp;manera&nbsp;segura</span></div></li>
+<li><div class="src-line"><a name="a39"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;de&nbsp;tal&nbsp;manera&nbsp;de&nbsp;evitar&nbsp;ataques&nbsp;de&nbsp;inyeccion&nbsp;de&nbsp;sql&nbsp;etc</span></div></li>
+<li><div class="src-line"><a name="a40"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;solo&nbsp;hacer&nbsp;la&nbsp;llamada&nbsp;al&nbsp;metodo&nbsp;con&nbsp;el&nbsp;nombre&nbsp;de&nbsp;la&nbsp;variable&nbsp;que&nbsp;se&nbsp;pasa&nbsp;por&nbsp;formulario</span></div></li>
+<li><div class="src-line"><a name="a41"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;el&nbsp;parametro&nbsp;$only&nbsp;es&nbsp;para&nbsp;limitar&nbsp;el&nbsp;tipo&nbsp;de&nbsp;variable&nbsp;que&nbsp;se&nbsp;desea&nbsp;recibir&nbsp;ej:&nbsp;$_GET&nbsp;o&nbsp;$_POST</span></div></li>
+<li><div class="src-line"><a name="a42"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a rel="contents" href="svcms1/database/formulario.html#methodgetvar">getvar</a><span class="src-sym">(</span><span class="src-var">$var</span><span class="src-sym">,</span><span class="src-var">$only</span>=<span class="src-str">&quot;&quot;</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a46"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">/////////////////////validar&nbsp;el&nbsp;only</span></div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$only</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$var2&nbsp;</span>=&nbsp;<span class="src-var">$_REQUEST</span><span class="src-sym">[</span><span class="src-var">$var</span><span class="src-sym">]</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span><span class="src-key">else</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$only</span>==<span class="src-var">$_GET</span><span class="src-sym">)&nbsp;</span><span class="src-var">$var2&nbsp;</span>=&nbsp;<span class="src-var">$_GET</span><span class="src-sym">[</span><span class="src-var">$var</span><span class="src-sym">]</span><span class="src-sym">;&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-var">$var2&nbsp;</span>=&nbsp;<span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-var">$var</span><span class="src-sym">]</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//////////quitando&nbsp;las&nbsp;comillas&nbsp;simples&nbsp;y&nbsp;dobles</span></div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$seguro&nbsp;</span>=&nbsp;<a href="http://www.php.net/trim" rel="contents">trim</a><span class="src-sym">(</span><span class="src-var">$var2</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;</span><span class="src-comm">///fuera&nbsp;espacios&nbsp;en&nbsp;blanco</span></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$seguro&nbsp;</span>=&nbsp;<a href="http://www.php.net/str_replace" rel="contents">str_replace</a><span class="src-sym">(</span><span class="src-str">'&quot;'</span><span class="src-sym">,</span><span class="src-str">''</span><span class="src-sym">,&nbsp;</span><span class="src-var">$seguro</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;</span><span class="src-comm">///fuera&nbsp;comillas&nbsp;dobles</span></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$seguro&nbsp;</span>=&nbsp;<a href="http://www.php.net/str_replace" rel="contents">str_replace</a><span class="src-sym">(</span><span class="src-str">&quot;'&quot;</span><span class="src-sym">,</span><span class="src-str">&quot;&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-var">$seguro</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;</span><span class="src-comm">///fuera&nbsp;comillas&nbsp;simples</span></div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a62"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$seguro</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a64"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-comm">/////fin&nbsp;del&nbsp;metodo&nbsp;getvar</span></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">/*metodo&nbsp;insert_data,&nbsp;que&nbsp;inserta&nbsp;valores&nbsp;de&nbsp;un&nbsp;formulario&nbsp;en&nbsp;una&nbsp;tabla&nbsp;de&nbsp;la&nbsp;base&nbsp;de&nbsp;datos</span></div></li>
+<li><div class="src-line"><a name="a68"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$pref:&nbsp;toma&nbsp;el&nbsp;prefijo&nbsp;de&nbsp;cada&nbsp;campo&nbsp;que&nbsp;seran&nbsp;los&nbsp;valores&nbsp;que&nbsp;se&nbsp;van&nbsp;a&nbsp;insertar&nbsp;ejemplo&nbsp;r-nombre&nbsp;&quot;r&quot;</span></div></li>
+<li><div class="src-line"><a name="a69"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$sep&nbsp;es&nbsp;el&nbsp;caracter&nbsp;que&nbsp;separa&nbsp;al&nbsp;nombre&nbsp;del&nbsp;campo&nbsp;y&nbsp;el&nbsp;prefiejo&nbsp;ejemplo&nbsp;r_nombre&nbsp;nota&nbsp;la&nbsp;separacion&nbsp;debe&nbsp;ser&nbsp;un&nbsp;&quot;_&quot;</span></div></li>
+<li><div class="src-line"><a name="a70"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$tabla:&nbsp;la&nbsp;tabla&nbsp;de&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;que&nbsp;sufrirá&nbsp;los&nbsp;cambios</span></div></li>
+<li><div class="src-line"><a name="a71"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$metodo:&nbsp;vectores&nbsp;globales&nbsp;segun&nbsp;el&nbsp;método&nbsp;por&nbsp;el&nbsp;cual&nbsp;vienen&nbsp;los&nbsp;valores&nbsp;del&nbsp;formulario&nbsp;&quot;$_GET&quot;&nbsp;o&nbsp;&quot;$_POST&quot;</span></div></li>
+<li><div class="src-line"><a name="a72"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMPOTANTE:&nbsp;EL&nbsp;NOMBRE&nbsp;DE&nbsp;LOS&nbsp;CAMPOS&nbsp;DEBE&nbsp;SER&nbsp;EL&nbsp;NOMBRE&nbsp;DE&nbsp;LAS&nbsp;VARIABLES&nbsp;DE&nbsp;FORMULARIO&nbsp;PASADAS</span></div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a74"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a rel="contents" href="svcms1/database/formulario.html#methodinsert_data">insert_data</a><span class="src-sym">(</span><span class="src-var">$pref</span><span class="src-sym">,</span><span class="src-var">$sep</span><span class="src-sym">,</span><span class="src-var">$tabla</span><span class="src-sym">,</span><span class="src-var">$variables</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$r</span>=<span class="src-num">0</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">while</span><span class="src-sym">(</span>list<span class="src-sym">(</span><span class="src-var">$key</span><span class="src-sym">,&nbsp;</span><span class="src-var">$value</span><span class="src-sym">)&nbsp;</span>=&nbsp;<a href="http://www.php.net/each" rel="contents">each</a><span class="src-sym">(</span><span class="src-var">$variables</span><span class="src-sym">))</span></div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a83"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$value&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a rel="contents" href="svcms1/database/formulario.html#methodgetvar">getvar</a><span class="src-sym">(</span><span class="src-var">$key</span><span class="src-sym">,</span><span class="src-var">$variables</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a84"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">))</span><span class="src-sym">{&nbsp;&nbsp;</span><span class="src-comm">///si&nbsp;el&nbsp;campo&nbsp;no&nbsp;es&nbsp;vacio&nbsp;lo&nbsp;inserto</span></div></li>
+<li><div class="src-line"><a name="a85"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$nuevo&nbsp;</span>=&nbsp;<a href="http://www.php.net/explode" rel="contents">explode</a><span class="src-sym">(</span><span class="src-var">$sep</span><span class="src-sym">,</span><span class="src-var">$key</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$nuevo</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span>==<span class="src-var">$pref</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$valores</span><span class="src-sym">[</span><span class="src-var">$r</span><span class="src-sym">]&nbsp;</span>=&nbsp;<span class="src-var">$value</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a89"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$campos</span><span class="src-sym">[</span><span class="src-var">$r</span><span class="src-sym">]&nbsp;</span>=&nbsp;<span class="src-var">$nuevo</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a90"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$r</span>++<span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a91"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a92"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a93"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a94"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a95"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a96"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a97"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$lista&nbsp;</span>=&nbsp;<a href="http://www.php.net/implode" rel="contents">implode</a><span class="src-sym">(</span><span class="src-str">','</span><span class="src-sym">,</span><span class="src-var">$campos</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a98"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a rel="contents" href="svcms1/database/database.html#methodinsertar2">insertar2</a><span class="src-sym">(</span><span class="src-var">$tabla</span><span class="src-sym">,</span><span class="src-var">$lista</span><span class="src-sym">,</span><span class="src-var">$valores</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a99"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a100"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a101"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a102"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a103"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">/*metodo&nbsp;edit_data,&nbsp;que&nbsp;edita&nbsp;valores&nbsp;de&nbsp;un&nbsp;formulario&nbsp;en&nbsp;una&nbsp;tabla&nbsp;de&nbsp;la&nbsp;base&nbsp;de&nbsp;datos</span></div></li>
+<li><div class="src-line"><a name="a104"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$pref:&nbsp;toma&nbsp;el&nbsp;prefijo&nbsp;de&nbsp;cada&nbsp;campo&nbsp;que&nbsp;seran&nbsp;los&nbsp;valores&nbsp;que&nbsp;se&nbsp;van&nbsp;a&nbsp;insertar&nbsp;ejemplo&nbsp;r-nombre&nbsp;&quot;r&quot;</span></div></li>
+<li><div class="src-line"><a name="a105"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$sep&nbsp;es&nbsp;el&nbsp;caracter&nbsp;que&nbsp;separa&nbsp;al&nbsp;nombre&nbsp;del&nbsp;campo&nbsp;y&nbsp;el&nbsp;prefiejo&nbsp;ejemplo&nbsp;r_nombre&nbsp;nota&nbsp;la&nbsp;separacion&nbsp;debe&nbsp;ser&nbsp;un&nbsp;&quot;_&quot;</span></div></li>
+<li><div class="src-line"><a name="a106"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$tabla:&nbsp;la&nbsp;tabla&nbsp;de&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;que&nbsp;sufrirá&nbsp;los&nbsp;cambios</span></div></li>
+<li><div class="src-line"><a name="a107"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$metodo:&nbsp;vectores&nbsp;globales&nbsp;segun&nbsp;el&nbsp;método&nbsp;por&nbsp;el&nbsp;cual&nbsp;vienen&nbsp;los&nbsp;valores&nbsp;del&nbsp;formulario&nbsp;&quot;$_GET&quot;&nbsp;o&nbsp;&quot;$_POST&quot;</span></div></li>
+<li><div class="src-line"><a name="a108"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$where:&nbsp;condicion&nbsp;de&nbsp;edicion&nbsp;ejemplo&nbsp;id='1'</span></div></li>
+<li><div class="src-line"><a name="a109"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMPOTANTE:&nbsp;EL&nbsp;NOMBRE&nbsp;DE&nbsp;LOS&nbsp;CAMPOS&nbsp;DEBE&nbsp;SER&nbsp;EL&nbsp;NOMBRE&nbsp;DE&nbsp;LAS&nbsp;VARIABLES&nbsp;DE&nbsp;FORMULARIO&nbsp;PASADAS</span></div></li>
+<li><div class="src-line"><a name="a110"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a111"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a rel="contents" href="svcms1/database/formulario.html#methodupdate_data">update_data</a><span class="src-sym">(</span><span class="src-var">$pref</span><span class="src-sym">,</span><span class="src-var">$sep</span><span class="src-sym">,</span><span class="src-var">$tabla</span><span class="src-sym">,</span><span class="src-var">$variables</span><span class="src-sym">,</span><span class="src-var">$where</span>=<span class="src-str">&quot;&quot;</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a112"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a113"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$r</span>=<span class="src-num">0</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a115"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">while</span><span class="src-sym">(</span>list<span class="src-sym">(</span><span class="src-var">$key</span><span class="src-sym">,&nbsp;</span><span class="src-var">$value</span><span class="src-sym">)&nbsp;</span>=&nbsp;<a href="http://www.php.net/each" rel="contents">each</a><span class="src-sym">(</span><span class="src-var">$variables</span><span class="src-sym">))</span></div></li>
+<li><div class="src-line"><a name="a116"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a117"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a118"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a119"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$value&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a rel="contents" href="svcms1/database/formulario.html#methodgetvar">getvar</a><span class="src-sym">(</span><span class="src-var">$key</span><span class="src-sym">,</span><span class="src-var">$variables</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a120"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a121"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$nuevo&nbsp;</span>=&nbsp;<a href="http://www.php.net/explode" rel="contents">explode</a><span class="src-sym">(</span><span class="src-var">$sep</span><span class="src-sym">,</span><span class="src-var">$key</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a122"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a123"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$nuevo</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span>==<span class="src-var">$pref</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a124"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$valores</span><span class="src-sym">[</span><span class="src-var">$r</span><span class="src-sym">]&nbsp;</span>=&nbsp;<span class="src-var">$value</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a125"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$campos</span><span class="src-sym">[</span><span class="src-var">$r</span><span class="src-sym">]&nbsp;</span>=&nbsp;<span class="src-var">$nuevo</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a126"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$r</span>++<span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a127"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a128"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a129"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a130"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a131"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a132"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a rel="contents" href="svcms1/database/database.html#methodupdate">update</a><span class="src-sym">(</span><span class="src-var">$tabla</span><span class="src-sym">,</span><span class="src-var">$campos</span><span class="src-sym">,</span><span class="src-var">$valores</span><span class="src-sym">,</span><span class="src-var">$where</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a133"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a134"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a135"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a136"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a137"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a138"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a139"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a140"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a141"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a142"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a143"></a><span class="src-sym">}&nbsp;</span><span class="src-comm">////&nbsp;fin&nbsp;de&nbsp;la&nbsp;clase&nbsp;formulario</span></div></li>
+<li><div class="src-line"><a name="a144"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a145"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a146"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a147"></a><span class="src-php">?&gt;</span></div></li>
+</ol>
+    </div>
+</div>

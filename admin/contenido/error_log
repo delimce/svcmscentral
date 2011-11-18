@@ -1,0 +1,47 @@
+[29-Dec-2010 04:17:42] PHP Fatal error:  Call to a member function query() on a non-object in /home/svcmscen/public_html/admin/contenido/art.php on line 12
+[29-Dec-2010 09:09:48] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'svcmscen'@'localhost' (using password: NO) in /home/svcmscen/public_html/SVsystem/class/database.php on line 115
+[29-Dec-2010 10:31:28] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home/svcmscen/public_html/admin/contenido/security.php on line 3
+[29-Dec-2010 10:31:28] PHP Warning:  session_destroy() [<a href='function.session-destroy'>function.session-destroy</a>]: Trying to destroy uninitialized session in /home/svcmscen/public_html/admin/contenido/security.php on line 5
+[07-Feb-2011 08:40:30] PHP Fatal error:  Call to a member function query() on a non-object in /home/svcmscen/public_html/admin/contenido/art.php on line 12
+[03-Mar-2011 16:20:23] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home/svcmscen/public_html/SVsystem/class/image.php on line 82
+[15-May-2011 21:46:12] PHP Parse error:  syntax error, unexpected T_ELSE in /home/svcmscen/public_html/SVsystem/class/image.php on line 87
+[16-May-2011 21:50:58] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home/svcmscen/public_html/admin/contenido/security.php on line 3
+[29-May-2011 13:35:07] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home/svcmscen/public_html/SVsystem/class/image.php on line 82
+[29-May-2011 13:35:07] PHP Warning:  imagejpeg(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 87
+[09-Jun-2011 18:14:54] PHP Parse error:  syntax error, unexpected T_STRING in /home/svcmscen/public_html/admin/contenido/edit_categoria.php on line 43
+[09-Jun-2011 18:15:07] PHP Parse error:  syntax error, unexpected T_STRING in /home/svcmscen/public_html/admin/contenido/edit_categoria.php on line 43
+[09-Jun-2011 18:16:14] PHP Parse error:  syntax error, unexpected T_STRING in /home/svcmscen/public_html/admin/contenido/edit_categoria.php on line 43
+[09-Jun-2011 18:16:32] PHP Parse error:  syntax error, unexpected T_STRING in /home/svcmscen/public_html/admin/contenido/edit_categoria.php on line 43
+[09-Jun-2011 18:33:43] PHP Parse error:  syntax error, unexpected T_STRING in /home/svcmscen/public_html/admin/contenido/edit_categoria.php on line 43
+[18-Jun-2011 22:16:14] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 35
+[18-Jun-2011 22:16:14] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 36
+[18-Jun-2011 22:16:14] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 89
+[18-Jun-2011 22:34:41] PHP Fatal error:  Call to undefined function  smart_resize_image() in /home/svcmscen/public_html/admin/contenido/insert_scategoria.php on line 35
+[18-Jun-2011 22:36:04] PHP Warning:  include(../../../SVsystem/class/funciones.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/svcmscen/public_html/admin/contenido/insert_scategoria.php on line 7
+[18-Jun-2011 22:36:04] PHP Warning:  include(../../../SVsystem/class/funciones.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/svcmscen/public_html/admin/contenido/insert_scategoria.php on line 7
+[18-Jun-2011 22:36:04] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../../SVsystem/class/funciones.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/svcmscen/public_html/admin/contenido/insert_scategoria.php on line 7
+[18-Jun-2011 22:36:25] PHP Warning:  include(../../../SVsystem/class/funciones.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/svcmscen/public_html/admin/contenido/insert_scategoria.php on line 7
+[18-Jun-2011 22:36:25] PHP Warning:  include(../../../SVsystem/class/funciones.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/svcmscen/public_html/admin/contenido/insert_scategoria.php on line 7
+[18-Jun-2011 22:36:25] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../../SVsystem/class/funciones.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/svcmscen/public_html/admin/contenido/insert_scategoria.php on line 7
+[18-Jun-2011 22:36:33] PHP Warning:  include(../../../SVsystem/class/funciones.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/svcmscen/public_html/admin/contenido/insert_scategoria.php on line 7
+[18-Jun-2011 22:36:33] PHP Warning:  include(../../../SVsystem/class/funciones.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/svcmscen/public_html/admin/contenido/insert_scategoria.php on line 7
+[18-Jun-2011 22:36:33] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../../SVsystem/class/funciones.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/svcmscen/public_html/admin/contenido/insert_scategoria.php on line 7
+[31-Jul-2011 13:23:12] PHP Fatal error:  Cannot redeclare class tools in /home/svcmscen/public_html/SVsystem/class/tools.php on line 701
+[31-Jul-2011 13:24:11] PHP Fatal error:  Cannot redeclare class tools in /home/svcmscen/public_html/SVsystem/class/tools.php on line 701
+[02-Sep-2011 21:49:43] PHP Fatal error:  Call to a member function array_query2() on a non-object in /home/svcmscen/public_html/admin/n-include-mensajes.php on line 4
+[02-Sep-2011 21:50:32] PHP Fatal error:  Call to a member function autoconexion() on a non-object in /home/svcmscen/public_html/admin/contenido/n-include-menu.php on line 8
+[02-Sep-2011 21:50:50] PHP Fatal error:  Call to a member function array_query2() on a non-object in /home/svcmscen/public_html/admin/n-include-mensajes.php on line 4
+[02-Sep-2011 21:51:22] PHP Fatal error:  Call to a member function autoconexion() on a non-object in /home/svcmscen/public_html/admin/contenido/n-include-menu.php on line 8
+[02-Sep-2011 21:52:14] PHP Fatal error:  Call to a member function autoconexion() on a non-object in /home/svcmscen/public_html/admin/contenido/n-include-menu.php on line 8
+[08-Sep-2011 09:27:16] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home/svcmscen/public_html/admin/contenido/security.php on line 3
+[08-Sep-2011 09:27:57] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home/svcmscen/public_html/admin/contenido/security.php on line 3
+[08-Sep-2011 16:20:47] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home/svcmscen/public_html/admin/contenido/security.php on line 3
+[15-Sep-2011 09:32:02] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home/svcmscen/public_html/admin/contenido/security.php on line 3
+[16-Sep-2011 09:22:21] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home/svcmscen/public_html/admin/contenido/security.php on line 3
+[20-Sep-2011 10:45:30] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home/svcmscen/public_html/admin/contenido/security.php on line 3
+[20-Sep-2011 10:57:41] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home/svcmscen/public_html/admin/contenido/security.php on line 3
+[25-Sep-2011 06:28:16] PHP Fatal error:  Call to a member function query() on a non-object in /home/svcmscen/public_html/admin/contenido/art.php on line 11
+[28-Sep-2011 00:51:51] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'svcmscen'@'localhost' (using password: NO) in /home/svcmscen/public_html/SVsystem/class/database.php on line 115
+[28-Sep-2011 07:40:24] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home/svcmscen/public_html/admin/contenido/security.php on line 3
+[28-Sep-2011 07:40:24] PHP Warning:  session_destroy() [<a href='function.session-destroy'>function.session-destroy</a>]: Trying to destroy uninitialized session in /home/svcmscen/public_html/admin/contenido/security.php on line 5
+[02-Nov-2011 09:21:05] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home/svcmscen/public_html/admin/contenido/security.php on line 3

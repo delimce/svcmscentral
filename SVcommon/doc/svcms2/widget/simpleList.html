@@ -1,0 +1,884 @@
+<html>
+<head>
+<title>Docs For Class simpleList</title>
+<link rel="stylesheet" type="text/css" href="../../media/style.css">
+</head>
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
+  <tr>
+  	<td>
+  		<table width="100%" border="0" cellspacing="0" cellpadding="0" >
+  			<tr>
+  				<td width="200"><img width="200" src="http://www.svcmscentral.com/SVsitefiles/svcms2/categoria/turn/img-categoria-herramientas.jpg"></td>
+    			<td class="header_top">svcms2</td>
+    		</tr>
+    	</table>
+    </td>
+  </tr>
+  <tr><td class="header_line"><img src="../../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+  <tr>
+    <td class="header_menu">
+        
+                                                        
+                              		  [ <a href="../../classtrees_svcms2.html" class="menu">class tree: svcms2</a> ]
+		  [ <a href="../../elementindex_svcms2.html" class="menu">index: svcms2</a> ]
+		  	    [ <a href="../../elementindex.html" class="menu">all elements</a> ]
+    </td>
+  </tr>
+  <tr><td class="header_line"><img src="../../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="200" class="menu">
+	<div id="todolist">
+			<p><a href="../../todolist.html">Todo List</a></p>
+	</div>
+      <b>Packages:</b><br />
+              <a href="../../li_svcms1.html">svcms1</a><br />
+              <a href="../../li_svcms2.html">svcms2</a><br />
+            <br /><br />
+                  
+            <b>Classes:</b><br />
+        <div class="package">
+	elementos<br />	    &nbsp;&nbsp;		<a href="../../svcms2/elementos/articulo.html">articulo</a><br />
+	    &nbsp;&nbsp;		<a href="../../svcms2/elementos/categoria.html">categoria</a><br />
+	    &nbsp;&nbsp;		<a href="../../svcms2/elementos/producto.html">producto</a><br />
+	  </div>
+  <div class="package">
+	widget<br />	    &nbsp;&nbsp;		<a href="../../svcms2/widget/shoppingCart.html">shoppingCart</a><br />
+	    &nbsp;&nbsp;		<a href="../../svcms2/widget/simpleList.html">simpleList</a><br />
+	    &nbsp;&nbsp;		<a href="../../svcms2/widget/widget.html">widget</a><br />
+	  </div>
+            
+
+    </td>
+    <td>
+      <table cellpadding="10" cellspacing="0" width="100%" border="0"><tr><td valign="top">
+
+<h1>Class: simpleList</h1>
+Source Location: /SVwidgets/SimpleList/SimpleList.inc<br /><br />
+
+
+<table width="100%" border="0">
+<tr><td valign="top">
+
+<h3><a href="#class_details">Class Overview</a></h3>
+<pre><a href="../../svcms2/widget/widget.html">widget</a>
+   |
+   --simpleList</pre><br />
+<div class="description">Clase para presentar los listados en la página.</div><br /><br />
+<h4>Author(s):</h4>
+<ul>
+          <li>Luis Poggi</li>
+      </ul>
+
+
+
+
+    
+
+        
+</td>
+
+<td valign="top">
+<h3><a href="#class_vars">Variables</a></h3>
+<ul>
+    <li><a href="../../svcms2/widget/simpleList.html#var$articulo">$articulo</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#var$autorArticulo">$autorArticulo</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#var$categoria">$categoria</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#var$formatoPresentacionHoja">$formatoPresentacionHoja</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#var$formatoTitulo">$formatoTitulo</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#var$funciones">$funciones</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#var$maxElementos">$maxElementos</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#var$producto">$producto</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#var$tagInterno">$tagInterno</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#var$titulo">$titulo</a></li>
+  </ul>
+</td>
+
+
+<td valign="top">
+<h3><a href="#class_methods">Methods</a></h3>
+<ul>
+    <li><a href="../../svcms2/widget/simpleList.html#method__construct">__construct</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodarticulosDestacados">articulosDestacados</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodarticulosEnCategoria">articulosEnCategoria</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodarticulosMasVistos">articulosMasVistos</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodarticulosRelacionados">articulosRelacionados</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodcategoriasDeArticulos">categoriasDeArticulos</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodcategoriasDeProductos">categoriasDeProductos</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodcategoriasEnCategoria">categoriasEnCategoria</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodelementosEnCategorias">elementosEnCategorias</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodproductosDestacados">productosDestacados</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodproductosEnCategoria">productosEnCategoria</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodproductosMasVendidos">productosMasVendidos</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodproductosMasVistos">productosMasVistos</a></li>
+    <li><a href="../../svcms2/widget/simpleList.html#methodproductosRelacionados">productosRelacionados</a></li>
+  </ul>
+</td>
+
+</tr></table>
+<hr />
+
+<table width="100%" border="0"><tr>
+
+
+
+
+<td valign="top">
+<h3>Inherited Variables</h3>
+<div class="tags">
+<h4>Class: <a href="../../svcms2/widget/widget.html">widget</a></h4>
+<dl>
+<dt>
+  <a href="../../svcms2/widget/widget.html#var$formatoPresentacion">widget::$formatoPresentacion</a>
+  </dt>
+<dd>
+   
+</dd>
+<dt>
+  <a href="../../svcms2/widget/widget.html#var$formatoSinResultados">widget::$formatoSinResultados</a>
+  </dt>
+<dd>
+   
+</dd>
+<dt>
+  <a href="../../svcms2/widget/widget.html#var$rutaBase">widget::$rutaBase</a>
+  </dt>
+<dd>
+   
+</dd>
+</dl>
+</div>
+</td>
+
+
+</tr></table>
+<hr />
+
+<a name="class_details"></a>
+<h3>Class Details</h3>
+<div class="tags">
+[line 27]<br />
+Clase para presentar los listados en la página.<br /><br /><p><br />Estan los listados tanto para artículos como para productos y se pueden usar combinados o separados  <br />Cada listado tiene parametros que lo configuran, sin embargo los parametros de la clase, tanto los propios  como los heredados de widget aplican para todos los métodos, según el caso en algunos pueden tener o no significado</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>author:</b>&nbsp;&nbsp;</td><td>Luis Poggi</td>
+  </tr>
+</table>
+</div>
+</div><br /><br />
+<div class="top">[ <a href="#top">Top</a> ]</div><br />
+
+<hr />
+<a name="class_vars"></a>
+<h3>Class Variables</h3>
+<div class="tags">
+	<a name="var$articulo"></a>
+	<p></p>
+	<h4>$articulo = <span class="value"></span></h4>
+	<p>[line 67]</p>
+  Articulo en el widget<br /><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>articulo</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$autorArticulo"></a>
+	<p></p>
+	<h4>$autorArticulo = <span class="value"></span></h4>
+	<p>[line 47]</p>
+  Enter description here ...<br /><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>unknown_type</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$categoria"></a>
+	<p></p>
+	<h4>$categoria = <span class="value"></span></h4>
+	<p>[line 72]</p>
+  Enter description here ...<br /><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>unknown_type</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$formatoPresentacionHoja"></a>
+	<p></p>
+	<h4>$formatoPresentacionHoja = <span class="value"></span></h4>
+	<p>[line 42]</p>
+  Enter description here ...<br /><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>unknown_type</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$formatoTitulo"></a>
+	<p></p>
+	<h4>$formatoTitulo = <span class="value"></span></h4>
+	<p>[line 32]</p>
+  Enter description here ...<br /><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>unknown_type</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$funciones"></a>
+	<p></p>
+	<h4>$funciones = <span class="value"></span></h4>
+	<p>[line 52]</p>
+  Enter description here ...<br /><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>unknown_type</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$maxElementos"></a>
+	<p></p>
+	<h4>$maxElementos = <span class="value"></span></h4>
+	<p>[line 57]</p>
+  Enter description here ...<br /><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>unknown_type</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$producto"></a>
+	<p></p>
+	<h4>$producto = <span class="value"></span></h4>
+	<p>[line 77]</p>
+  Enter description here ...<br /><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>producto</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$tagInterno"></a>
+	<p></p>
+	<h4>$tagInterno = <span class="value"></span></h4>
+	<p>[line 62]</p>
+  Enter description here ...<br /><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>unknown_type</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$titulo"></a>
+	<p></p>
+	<h4>$titulo = <span class="value"></span></h4>
+	<p>[line 37]</p>
+  Enter description here ...<br /><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>unknown_type</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+</div><br />
+
+<hr />
+<a name="class_methods"></a>
+<h3>Class Methods</h3>
+<div class="tags">
+
+  <hr />
+	<a name="method__construct"></a>
+	<h3>constructor __construct <span class="smalllinenumber">[line 84]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>simpleList __construct(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Constructor. Permite instanciar el widget.<br /><br /><br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodarticulosDestacados"></a>
+	<h3>method articulosDestacados <span class="smalllinenumber">[line 189]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void articulosDestacados(
+[$maxResults
+$maxResults = 0])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Permite listar los articulos destacados del site. Utiliza las siguientes variables<br /><br /><p><ul><li>titulo, Si no esta configurado toma el valor por defecto &quot;Artículos Destacados&quot;, si se coloca como valor &quot;NO&quot;, no se carga ningun valor</li><li>autorArticulo, Si no esta configurado toma el valor por defecto &quot;1&quot;</li><li>rutaBase, permite configurar la ruta desde donde se toman las imagenes</li><li>formatoPresentacion, ubicación del archivo de presentación de los articulos encontrados</li><li>formatoSinResultados, ubicación del archivo de presentación cuando no hay resultados encontrados</li><li>formatoTitulo, ubicación del archivo de presentación del titulo de los articulos. Si se coloca como valor &quot;NO&quot;, no se muestra el formato</li></ul>  <br />La forma estándar de colocar el widget es como sigue  <ol><li><div class="src-line">&nbsp;<span class="src-var">$widget&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../../svcms2/widget/simpleList.html">simpleList</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/widget.html#var$formatoPresentacion">formatoPresentacion</a></span>=<span class="src-str">&quot;SVwidgets/SimpleList/formato-articulo.php&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/simpleList.html#var$formatoTitulo">formatoTitulo</a></span>=<span class="src-str">&quot;SVwidgets/SimpleList/formato-titulo.php&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/simpleList.html#var$titulo">titulo</a></span>=<span class="src-str">&quot;Articulos&nbsp;Destacados&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/widget.html#var$rutaBase">rutaBase</a>&nbsp;</span>=&nbsp;<span class="src-var">$DOMINIOSV</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><a href="../../svcms2/widget/simpleList.html#methodarticulosDestacados">articulosDestacados</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol>  <br />Si se quiere indicar el máximo número de resultados  <ol><li><div class="src-line">&nbsp;<span class="src-var">$widget&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../../svcms2/widget/simpleList.html">simpleList</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/widget.html#var$formatoPresentacion">formatoPresentacion</a></span>=<span class="src-str">&quot;SVwidgets/SimpleList/formato-articulo.php&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/simpleList.html#var$formatoTitulo">formatoTitulo</a></span>=<span class="src-str">&quot;SVwidgets/SimpleList/formato-titulo.php&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/simpleList.html#var$titulo">titulo</a></span>=<span class="src-str">&quot;Articulos&nbsp;Destacados&nbsp;Maximo&nbsp;1&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/widget.html#var$rutaBase">rutaBase</a>&nbsp;</span>=&nbsp;<span class="src-var">$DOMINIOSV</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><a href="../../svcms2/widget/simpleList.html#methodarticulosDestacados">articulosDestacados</a><span class="src-sym">(</span><span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="src-comm">//El&nbsp;valor&nbsp;1&nbsp;indica&nbsp;que&nbsp;solo&nbsp;se&nbsp;muestre&nbsp;un&nbsp;resultado</span></div></li>
+</ol></p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://common.svcmscentral.com/SVwidgets/SimpleList/examples/ArticulosDestacadosCombinados.php">Véalo en funcionamiento! Tipos Combinados</a></td>
+  </tr>
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://common.svcmscentral.com/SVwidgets/SimpleList/examples/ArticulosDestacadosSinResultados.php">Véalo en funcionamiento! Sin Resultados</a></td>
+  </tr>
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://common.svcmscentral.com/SVwidgets/SimpleList/examples/ArticulosDestacados.php">Véalo en funcionamiento! Varios Tipos</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource_n_SVwidgets_SimpleList_examples_formato-titulo.php_cb607991cb8f0f7d0aadfd49f3d013ea.html">Ejemplo de formato del titulo del widget</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource_pleList_examples_ArticulosDestacadosCombinados.php_245677df5118e5ef15664015e79782e1.html">Ejemplo de uso de los articulos Destacados</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource_SVwidgets_SimpleList_examples_formato-articulo.php_ba27b4d48a6aaa04c4780815c009d7e4.html">Ejemplo de formato del articulo destacado</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource_idgets_SimpleList_examples_ArticulosDestacados.php_808ce95b24fecdd188b11d2a0d695fac.html">Ejemplo de uso de los articulos Destacados</a></td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">$maxResults&nbsp;&nbsp;</td>
+        <td><b>$maxResults</b>&nbsp;&nbsp;</td>
+        <td>Número máximo de resultados que se desea colocar, si no se coloca o se coloca 0 se muestran todos los resultados</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodarticulosEnCategoria"></a>
+	<h3>method articulosEnCategoria <span class="smalllinenumber">[line 232]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void articulosEnCategoria(
+Number
+$catId, Number
+$nivel, [String
+$orderBy = &quot;&quot;], [Number
+$maxResults = 0])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Permite obtener los articulos en una categoría específica. Utiliza las siguientes variables<br /><br /><p><ul><li>titulo, Si no esta configurado toma el valor por defecto &quot;Artículos Destacados&quot;, si se coloca como valor &quot;NO&quot;, no se carga ningun valor</li><li>rutaBase, permite configurar la ruta desde donde se toman las imagenes</li><li>formatoPresentacion, ubicación del archivo de presentación de los articulos encontrados</li><li>formatoSinResultados, ubicación del archivo de presentación cuando no hay resultados encontrados</li><li>formatoTitulo, ubicación del archivo de presentación del titulo de los articulos. Si se coloca como valor &quot;NO&quot;, no se muestra el formato</li></ul>  <br />La forma estándar de colocar el widget es como sigue  <ol><li><div class="src-line">&nbsp;<span class="src-var">$widget&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../../svcms2/widget/simpleList.html">simpleList</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/widget.html#var$formatoPresentacion">formatoPresentacion</a></span>=<span class="src-str">&quot;SVwidgets/SimpleList/formato-articulo.php&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/simpleList.html#var$formatoTitulo">formatoTitulo</a></span>=<span class="src-str">&quot;SVwidgets/SimpleList/formato-titulo.php&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/simpleList.html#var$titulo">titulo</a></span>=<span class="src-str">&quot;Articulos&nbsp;de&nbsp;una&nbsp;categoría&nbsp;específica&nbsp;(FAQ)&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/widget.html#var$rutaBase">rutaBase</a>&nbsp;</span>=&nbsp;<span class="src-var">$DOMINIOSV</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><a href="../../svcms2/widget/simpleList.html#methodarticulosEnCategoria">articulosEnCategoria</a><span class="src-sym">(</span><span class="src-var">$catId</span><span class="src-sym">,&nbsp;</span><span class="src-var">$nivel</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol>  <br />Si se quiere indicar el máximo número de resultados  <ol><li><div class="src-line">&nbsp;<span class="src-var">$widget&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../../svcms2/widget/simpleList.html">simpleList</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/widget.html#var$formatoPresentacion">formatoPresentacion</a></span>=<span class="src-str">&quot;SVwidgets/SimpleList/formato-articulo.php&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/simpleList.html#var$formatoTitulo">formatoTitulo</a></span>=<span class="src-str">&quot;SVwidgets/SimpleList/formato-titulo.php&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/simpleList.html#var$titulo">titulo</a></span>=<span class="src-str">&quot;Articulos&nbsp;de&nbsp;una&nbsp;sub&nbsp;categoría&nbsp;específica&nbsp;(El&nbsp;Sistema&nbsp;por&nbsp;dentro)&nbsp;y&nbsp;max&nbsp;results&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../svcms2/widget/widget.html#var$rutaBase">rutaBase</a>&nbsp;</span>=&nbsp;<span class="src-var">$DOMINIOSV</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$widget</span><span class="src-sym">-&gt;</span><a href="../../svcms2/widget/simpleList.html#methodarticulosEnCategoria">articulosEnCategoria</a><span class="src-sym">(</span><span class="src-var">$catId</span><span class="src-sym">,&nbsp;</span><span class="src-var">$nivel</span><span class="src-sym">,&nbsp;</span><span class="src-str">&quot;&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-num">3</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://common.svcmscentral.com/SVwidgets/SimpleList/examples/ArticulosEnCategoria.php">Véalo en funcionamiento! Varios Tipos</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource_n_SVwidgets_SimpleList_examples_formato-titulo.php_cb607991cb8f0f7d0aadfd49f3d013ea.html">Ejemplo de formato del titulo del widget</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource_SVwidgets_SimpleList_examples_formato-articulo.php_ba27b4d48a6aaa04c4780815c009d7e4.html">Ejemplo de formato del articulo</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource_dgets_SimpleList_examples_ArticulosEnCategoria.php_10f4f572ce17663861ff9d2fa7699198.html">Muestra los articulos de una categoria</a></td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">Number&nbsp;&nbsp;</td>
+        <td><b>$catId</b>&nbsp;&nbsp;</td>
+        <td>Identificador de la categoria a mostrar</td>
+      </tr>
+          <tr>
+        <td class="type">Number&nbsp;&nbsp;</td>
+        <td><b>$nivel</b>&nbsp;&nbsp;</td>
+        <td>Nivel de la categoria a mostrar</td>
+      </tr>
+          <tr>
+        <td class="type">String&nbsp;&nbsp;</td>
+        <td><b>$orderBy</b>&nbsp;&nbsp;</td>
+        <td>campos separados por coma por los cuales se va a ordenar el resultado, si no se configura ninguno  se ordena por orden, titulo, id</td>
+      </tr>
+          <tr>
+        <td class="type">Number&nbsp;&nbsp;</td>
+        <td><b>$maxResults</b>&nbsp;&nbsp;</td>
+        <td>maximo numero de resultados a mostrar. Si se coloca 0 (o no se coloca nada) salen todos los resultados posibles</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodarticulosMasVistos"></a>
+	<h3>method articulosMasVistos <span class="smalllinenumber">[line 277]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void articulosMasVistos(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Permite obtener los articulos mas vistos del site.<br /><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>since:</b>&nbsp;&nbsp;</td><td>svcms2 Requiere cambios en la BD para su funcionamiento</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodarticulosRelacionados"></a>
+	<h3>method articulosRelacionados <span class="smalllinenumber">[line 289]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void articulosRelacionados(
+String
+$idArticulo)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Obtiene los articulos relacionados a un artículo específico<br /><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>since:</b>&nbsp;&nbsp;</td><td>svcms2 Requiere cambios en la BD para su funcionamiento</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">String&nbsp;&nbsp;</td>
+        <td><b>$idArticulo</b>&nbsp;&nbsp;</td>
+        <td>Identificador del articulo a buscar sus relacionados</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodcategoriasDeArticulos"></a>
+	<h3>method categoriasDeArticulos <span class="smalllinenumber">[line 332]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void categoriasDeArticulos(
+[Number
+$nivel = 1], [boolean
+$mostrarArticulos = true], [boolean
+$incluirGeneral = true])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Permite encontrar las categorias y subcategorias de articulos que están configuradas.<br /><br /><p>Según las configuraciones se muestran mas o menos niveles de categorias y los articulos de la misma.  Además de los parámetros toma en cuenta lo siguientes parametros de la clase  <ul><li>formatoPresentacion, formato para las categorías. Se debe colocar en el formato el tag &lt;element/&gt; para indicar donde se quieren los hijos.</li><li>formatoPresentacionHoja, formato del último nivel del widget. Si se configura para mostrarse 4 niveles, pero en el nivel 2
+ alguna categoría no tiene mas hijos, los articulos (si están configurados para salir) se muestran con este formato</li><li>formatoTitulo, formato del titulo del widget</li><li>rutaBase, próximo a ser eliminado, indica la ruta base de las imagenes. Se configura con  $DOMINIOSV usualmente</li></ul>  En el comportamiento estandar de la función se incluye la revisión de la permisología de las categorías.  <br />Si en la sesión no hay usuario logueado solo se muestran las categorías con only_for=0  <br />Si en la sesión hay un usuario logueado se muestran las categorias con only_for=0,1 y cualquier grupo al cual el pertenezca.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://common.svcmscentral.com/SVwidgets/SimpleList/examples/ArticulosDestacadosCombinados.php">Véalo en funcionamiento!</a></td>
+  </tr>
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://common.svcmscentral.com/SVwidgets/SimpleList/examples/ArticulosDestacadosSinResultados.php">Véalo en funcionamiento!</a></td>
+  </tr>
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://common.svcmscentral.com/SVwidgets/SimpleList/examples/ArticulosEnCategoria.php">Véalo en funcionamiento!</a></td>
+  </tr>
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://common.svcmscentral.com/SVwidgets/SimpleList/examples/ArticulosDestacados.php">Véalo en funcionamiento!</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource__SimpleList_examples_menu-categorias-combinado.php_7bed4bf0fd4e88bf68399618e5e8b2f5.html">Categorias de Articulos y Productos en diferentes niveles</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource_gets_SimpleList_examples_menu-categorias-todas.php_8f15e833032ea517fed835bf167bb3ed.html">Arbol Completo</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource__SimpleList_examples_menu-categorias-articulos.php_ece9411c5b45ce6519250dbcaa0a7b7e.html">Solo categorias de articulos</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource_ts_SimpleList_examples_menu-categorias-1-nivel.php_77c2cfb837d3f65b863041a2edaba309.html">Categorias de Articulos y Productos de 1 nivel</a></td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">Number&nbsp;&nbsp;</td>
+        <td><b>$nivel</b>&nbsp;&nbsp;</td>
+        <td>Determina el nivel de categorias que se muestran</td>
+      </tr>
+          <tr>
+        <td class="type">boolean&nbsp;&nbsp;</td>
+        <td><b>$mostrarArticulos</b>&nbsp;&nbsp;</td>
+        <td>Indica si se muestran los articulos en el nivel final. Acepta los valores siguientes  <strong>true para mostrarlos</strong>,  <strong>false para no mostrarlos</strong></td>
+      </tr>
+          <tr>
+        <td class="type">boolean&nbsp;&nbsp;</td>
+        <td><b>$incluirGeneral</b>&nbsp;&nbsp;</td>
+        <td>Indica si se muestra la categoria de articulos #1, la de información General. Acepta los valores siguientes  <strong>true para mostrarla</strong>,  <strong>false para no mostrarla</strong></td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodcategoriasDeProductos"></a>
+	<h3>method categoriasDeProductos <span class="smalllinenumber">[line 605]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void categoriasDeProductos(
+[Number
+$nivel = 1], [boolean
+$mostrarProductos = true])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Permite encontrar las categorias y subcategorias de productos que están configuradas.<br /><br /><p>Según las configuraciones se muestran mas o menos niveles de categorias y los productos de la misma.  Además de los parámetros toma en cuenta lo siguientes parametros de la clase  <ul><li>formatoPresentacion, formato para las categorías. Se debe colocar en el formato el tag &lt;element/&gt; para indicar donde se quieren los hijos.</li><li>formatoPresentacionHoja, formato del último nivel del widget. Si se configura para mostrarse 4 niveles, pero en el nivel 2
+ alguna categoría no tiene mas hijos, los productos (si están configurados para salir) se muestran con este formato</li><li>formatoTitulo, formato del titulo del widget</li><li>rutaBase, próximo a ser eliminado, indica la ruta base de las imagenes. Se configura con  $DOMINIOSV usualmente</li></ul></p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://common.svcmscentral.com/SVwidgets/SimpleList/examples/ArticulosDestacadosCombinados.php">Véalo en funcionamiento!</a></td>
+  </tr>
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://common.svcmscentral.com/SVwidgets/SimpleList/examples/ArticulosDestacadosSinResultados.php">Véalo en funcionamiento!</a></td>
+  </tr>
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://common.svcmscentral.com/SVwidgets/SimpleList/examples/ArticulosEnCategoria.php">Véalo en funcionamiento!</a></td>
+  </tr>
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://common.svcmscentral.com/SVwidgets/SimpleList/examples/ArticulosDestacados.php">Véalo en funcionamiento!</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource__SimpleList_examples_menu-categorias-combinado.php_7bed4bf0fd4e88bf68399618e5e8b2f5.html">Categorias de Articulos y Productos en diferentes niveles</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource_gets_SimpleList_examples_menu-categorias-todas.php_8f15e833032ea517fed835bf167bb3ed.html">Arbol Completo</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource__SimpleList_examples_menu-categorias-productos.php_8a403e07238b3cb6a10125a1b19a49a7.html">Solo categorias de productos</a></td>
+  </tr>
+  <tr>
+    <td><b>example:</b>&nbsp;&nbsp;</td><td><a href="../../__examplesource/exsource_ts_SimpleList_examples_menu-categorias-1-nivel.php_77c2cfb837d3f65b863041a2edaba309.html">Categorias de Articulos y Productos de 1 nivel</a></td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">Number&nbsp;&nbsp;</td>
+        <td><b>$nivel</b>&nbsp;&nbsp;</td>
+        <td>Determina el nivel de categorias que se muestran</td>
+      </tr>
+          <tr>
+        <td class="type">boolean&nbsp;&nbsp;</td>
+        <td><b>$mostrarProductos</b>&nbsp;&nbsp;</td>
+        <td>Indica si se muestran los productos en el nivel final. Acepta los valores siguientes:  <strong>true para mostrarlos</strong>,  <strong>false para no mostrarlos</strong></td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodcategoriasEnCategoria"></a>
+	<h3>method categoriasEnCategoria <span class="smalllinenumber">[line 252]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void categoriasEnCategoria(
+unknown_type
+$catId, unknown_type
+$nivel, [unknown_type
+$orderBy = &quot;&quot;], [unknown_type
+$maxResults = 0])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Permite obtener las categorias hija de una categoría.<br /><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">unknown_type&nbsp;&nbsp;</td>
+        <td><b>$catId</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">unknown_type&nbsp;&nbsp;</td>
+        <td><b>$nivel</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">unknown_type&nbsp;&nbsp;</td>
+        <td><b>$orderBy</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">unknown_type&nbsp;&nbsp;</td>
+        <td><b>$maxResults</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodelementosEnCategorias"></a>
+	<h3>method elementosEnCategorias <span class="smalllinenumber">[line 948]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void elementosEnCategorias(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Enter description here ...<br /><br /><br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodproductosDestacados"></a>
+	<h3>method productosDestacados <span class="smalllinenumber">[line 881]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void productosDestacados(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Enter description here ...<br /><br /><br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodproductosEnCategoria"></a>
+	<h3>method productosEnCategoria <span class="smalllinenumber">[line 869]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void productosEnCategoria(
+unknown_type
+$catId, unknown_type
+$nivel, [unknown_type
+$orderBy = &quot;&quot;], [unknown_type
+$maxResults = 0])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Enter description here ...<br /><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">unknown_type&nbsp;&nbsp;</td>
+        <td><b>$catId</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">unknown_type&nbsp;&nbsp;</td>
+        <td><b>$nivel</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">unknown_type&nbsp;&nbsp;</td>
+        <td><b>$orderBy</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">unknown_type&nbsp;&nbsp;</td>
+        <td><b>$maxResults</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodproductosMasVendidos"></a>
+	<h3>method productosMasVendidos <span class="smalllinenumber">[line 890]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void productosMasVendidos(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Enter description here ...<br /><br /><br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodproductosMasVistos"></a>
+	<h3>method productosMasVistos <span class="smalllinenumber">[line 899]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void productosMasVistos(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Enter description here ...<br /><br /><br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodproductosRelacionados"></a>
+	<h3>method productosRelacionados <span class="smalllinenumber">[line 910]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void productosRelacionados(
+unknown_type
+$idProducto)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Enter description here ...<br /><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">unknown_type&nbsp;&nbsp;</td>
+        <td><b>$idProducto</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+</div><br />
+
+
+        <div class="credit">
+		    <hr />
+		    Documentación generada en Tue, 18 Oct 2011 00:25:04 -0400 usando <a href="http://www.phpdoc.org">phpDocumentor 1.4.3</a>
+	      </div>
+      </td></tr></table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

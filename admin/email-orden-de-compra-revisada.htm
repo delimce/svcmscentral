@@ -1,0 +1,80 @@
+
+<div id="container" style="font-family:verdana; font-size:13px; padding:10px; background-color: #D2D9DF; ;">
+
+
+<div>
+<div style="margin-bottom:10px;">Saludos $nombre_email . Este es el detalle de la compra que  usted realiz&oacute; y los cargos adicionales que debe pagar para que podamos procesar su compra. </div>
+
+
+
+</div>
+
+
+<div id="header" style="background-color:#EAEAEA; padding:5px;">
+
+<div id="empresa" style="font-size:25px; border-bottom:#CCC; border-bottom-style:solid; border-bottom-width:thin; ">$nombre_empresa</div>
+<div id="urlempresa" style="text-align:right; background-color:#B3C1D7;">$url_empresa &nbsp;&nbsp;&nbsp;&nbsp;  $email_empresa<br/>
+</div>
+
+
+
+<div id="datosempresa" style="font-size:10px; margin-top:5px;">
+<b>Rif:</b> $tifempresa<br/>
+<b>Direcci&oacute;n Fiscal:</b> $direccion_empresa <br/>
+<b>Tlfs:</b> $tlf_empresa
+</div>
+
+
+
+
+</div>
+
+
+<div id="cuerpo" style="background-color:#fff; padding:10px;">
+<div id="titulo" style="font-size:36px; color: #039; text-align:center; border-bottom:#CCC thin solid">Factura ProForma # $orden_id</div>
+
+<div id="datoscliente" style="text-align:right; padding:5px; color:#666;">
+<div id="nombrecliente" style="font-size:18px; font-weight:bold; margin:1px 0 0 0; color:#333;">Cliente: $nombre_email</div>
+
+<div id="datos">
+
+
+  <b>Cedula o Rif:</b> $rif &nbsp;&nbsp;&zwnj;&nbsp;&nbsp; 
+<b>Direccion Fiscal:</b> $cliente_dir , $cliente_tlf &nbsp;&nbsp;&zwnj;&nbsp;&nbsp;
+<b>E mail:</b> $email_send
+</div>
+
+</div>
+
+<div id="tituloorden" style="font-size:23px; margin:10px 0 0 0; color:#039;">Datos de la Operaci&oacute;n</div>
+<div id="fecha" style="font-size:10px;">Fecha de la orden de compra : $fecha_orden</div>
+
+<div id="datosorden" style="font-size:13px; margin:15px; padding:5px; border:#CCC solid 1px;">
+<div style="margin-bottom:5px;"><b>Productos en la orden de compra:</b> $productos_orden<br/></div>  
+<div style="margin-bottom:5px;"><b>Total Productos Ordenados:</b>$moneda_simbolo . $fact_subtotal1</div>
+<div style="margin-bottom:5px;"><b>Precio con descuento:</b>$moneda_simbolo . $fact_descuento</div>
+<div style="margin-bottom:5px;">&nbsp;</div>
+<div style="margin-bottom:5px;"><b>$fact_mod_nombre :</b> $fact_mod_signo $fact_mod_monto</div>
+<div style="margin-bottom:5px;"><b>Costo de Env&iacute;o:</b>$moneda_simbolo . $fact_envio</div>
+<div style="margin-bottom:5px;"><b>Sub Total + Recargos:</b>$moneda_simbolo . $fact_subtotal_con_recargos</div>
+<div style="margin-bottom:5px;">&nbsp;</div>
+<div style="margin-bottom:5px; text-align:right; font-size:18px;"><b>IVA:</b>$moneda_simbolo . $fact_iva</div>
+<div style="margin-bottom:5px; text-align:right; font-size:25px;"><b>Total a pagar:</b>$moneda_simbolo . $fact_total</div>
+<div id="mensajepago" style=" font-size:10px;text-align:center; padding:15px; margin:15px; border:#C00 solid 1px; font-weight:bold;">Para pagar esta factura, dir&iacute;jase a <a href="$url_empresa" target="_blank">$url_empresa</a> y acceda con su  email registrado y contrase&ntilde;a; luego elija la orden de compra en cuesti&oacute;n y haga click en el bot&oacute;n "pagar ahora".</div>
+
+<div id="observacionestitulo" style="font-size:20px; padding-top:15px;">Observaciones:</div>
+<div id="observaciones" style="padding:10px; background-color: #EBEBEB;; font-size:14px;">$fact_obs</div>
+
+
+ 
+
+</div>
+
+
+<!-- termina cuerpo aqui -->
+</div>
+
+
+
+<!-- cierra container aqui abajo -->
+</div>

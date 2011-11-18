@@ -1,0 +1,85 @@
+[28-Jul-2009 15:20:29] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home/svcmscen/public_html/SVsystem/class/image.php on line 82
+[28-Jul-2009 15:20:29] PHP Warning:  imagejpeg(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 87
+[28-Jul-2009 15:23:39] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home/svcmscen/public_html/SVsystem/class/image.php on line 82
+[28-Jul-2009 15:23:39] PHP Warning:  imagejpeg(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 87
+[20-Mar-2010 13:02:02] PHP Fatal error:  Can't use function return value in write context in /home/svcmscen/public_html/SVsystem/class/formulario.php on line 37
+[16-Nov-2010 17:53:13] PHP Fatal error:  Class 'tools' not found in /home/svcmscen/public_html/SVsystem/class/formulario.php on line 11
+[01-Jun-2011 16:25:24] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[01-Jun-2011 16:25:24] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[01-Jun-2011 16:25:24] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 99
+[01-Jun-2011 16:30:14] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[01-Jun-2011 16:30:14] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[01-Jun-2011 16:30:14] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 99
+[01-Jun-2011 16:30:43] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[01-Jun-2011 16:30:43] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[01-Jun-2011 16:30:43] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 99
+[01-Jun-2011 16:30:55] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[01-Jun-2011 16:30:55] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[01-Jun-2011 16:30:55] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 99
+[01-Jun-2011 16:31:07] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[01-Jun-2011 16:31:07] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[01-Jun-2011 16:31:07] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 99
+[01-Jun-2011 16:31:24] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[01-Jun-2011 16:31:24] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[01-Jun-2011 16:31:24] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 99
+[01-Jun-2011 16:31:33] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[01-Jun-2011 16:31:33] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[01-Jun-2011 16:31:33] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 99
+[03-Jun-2011 17:31:18] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[03-Jun-2011 17:31:18] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[03-Jun-2011 17:31:18] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[03-Jun-2011 17:31:35] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[03-Jun-2011 17:31:35] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[03-Jun-2011 17:31:35] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[03-Jun-2011 17:31:47] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[03-Jun-2011 17:31:47] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[03-Jun-2011 17:31:47] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[03-Jun-2011 17:45:03] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[03-Jun-2011 17:45:03] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[03-Jun-2011 17:45:03] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[03-Jun-2011 17:45:14] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[03-Jun-2011 17:45:14] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[03-Jun-2011 17:45:14] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[03-Jun-2011 17:45:39] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[03-Jun-2011 17:45:39] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[03-Jun-2011 17:45:39] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[03-Jun-2011 17:52:56] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[03-Jun-2011 17:52:56] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[03-Jun-2011 17:52:56] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[03-Jun-2011 18:01:53] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[03-Jun-2011 18:01:53] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[03-Jun-2011 18:01:53] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[03-Jun-2011 18:04:09] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[03-Jun-2011 18:04:09] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[03-Jun-2011 18:04:09] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[03-Jun-2011 18:04:44] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[03-Jun-2011 18:04:44] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[03-Jun-2011 18:04:44] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[07-Jun-2011 16:01:17] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[07-Jun-2011 16:01:17] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[07-Jun-2011 16:01:17] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[07-Jun-2011 16:09:51] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[07-Jun-2011 16:09:51] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[07-Jun-2011 16:09:51] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[07-Jun-2011 16:10:44] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[07-Jun-2011 16:10:44] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[07-Jun-2011 16:10:44] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 101
+[10-Jun-2011 16:56:29] PHP Fatal error:  Call to undefined function  smart_resize_image() in /home/svcmscen/public_html/admin/edit_index/pimagen.php on line 32
+[18-Jun-2011 05:04:39] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[18-Jun-2011 05:04:39] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[18-Jun-2011 05:04:40] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 98
+[18-Jun-2011 22:01:28] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[18-Jun-2011 22:01:28] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[18-Jun-2011 22:02:47] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 42
+[18-Jun-2011 22:02:47] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 43
+[18-Jun-2011 22:05:00] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 35
+[18-Jun-2011 22:05:00] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 36
+[24-Jun-2011 00:13:33] PHP Warning:  include(../security.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/svcmscen/public_html/admin/edit_index/pimagen.php on line 9
+[24-Jun-2011 00:13:33] PHP Warning:  include(../security.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/svcmscen/public_html/admin/edit_index/pimagen.php on line 9
+[24-Jun-2011 00:13:33] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../security.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/svcmscen/public_html/admin/edit_index/pimagen.php on line 9
+[24-Jun-2011 01:10:47] PHP Warning:  getimagesize() [<a href='function.getimagesize'>function.getimagesize</a>]: Filename cannot be empty in /home/svcmscen/public_html/SVsystem/class/image.php on line 30
+[24-Jun-2011 01:10:48] PHP Warning:  imagesx(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 35
+[24-Jun-2011 01:10:48] PHP Warning:  imagesy(): supplied argument is not a valid Image resource in /home/svcmscen/public_html/SVsystem/class/image.php on line 36
+[01-Sep-2011 03:37:08] PHP Warning:  include(n-include-menu.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/svcmscen/public_html/admin/edit_index/editar-index.php on line 229
+[01-Sep-2011 03:37:08] PHP Warning:  include(n-include-menu.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/svcmscen/public_html/admin/edit_index/editar-index.php on line 229
+[01-Sep-2011 03:37:08] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'n-include-menu.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/svcmscen/public_html/admin/edit_index/editar-index.php on line 229

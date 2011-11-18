@@ -1,0 +1,62 @@
+<div class='page_content'>
+        <h1>Source for file setup.php</h1>
+    <p>Documentation is available at <a rel="contents" href="default/_SVsystem---config---setup.php.html">setup.php</a></p>
+    <div class="src-code">
+    <ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?</span></div></li>
+<li><div class="src-line"><a name="a2"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a3"></a>&nbsp;&nbsp;<span class="src-comm">/****************&nbsp;PARAMETROS&nbsp;MODIFICABLES************************/</span></div></li>
+<li><div class="src-line"><a name="a4"></a>&nbsp;<span class="src-var">$DIRAPP&nbsp;</span>=&nbsp;<span class="src-str">&quot;&quot;</span><span class="src-sym">;&nbsp;</span><span class="src-comm">////&nbsp;nombre&nbsp;del&nbsp;directorio&nbsp;de&nbsp;la&nbsp;aplicacion,&nbsp;en&nbsp;caso&nbsp;de&nbsp;que&nbsp;sea&nbsp;el&nbsp;raiz&nbsp;se&nbsp;obvia&nbsp;por&nbsp;&quot;&quot;</span></div></li>
+<li><div class="src-line"><a name="a5"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a6"></a>&nbsp;<span class="src-comm">//////////////CORREO&nbsp;SMTP///////////////////////////////////////////////</span></div></li>
+<li><div class="src-line"><a name="a7"></a>&nbsp;<span class="src-var">$HOSTSMTP&nbsp;</span>=&nbsp;<span class="src-str">''</span><span class="src-sym">;&nbsp;</span><span class="src-comm">///smtp1.example.com;smtp2.example.com&quot;;&nbsp;&nbsp;//&nbsp;specify&nbsp;main&nbsp;and&nbsp;backup&nbsp;server</span></div></li>
+<li><div class="src-line"><a name="a8"></a>&nbsp;<span class="src-var">$SMTPAUTH&nbsp;</span>=&nbsp;<span class="src-id">true</span><span class="src-sym">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="src-comm">//&nbsp;turn&nbsp;on&nbsp;SMTP&nbsp;authentication</span></div></li>
+<li><div class="src-line"><a name="a9"></a>&nbsp;<span class="src-var">$SMTPUSER</span>=&nbsp;<span class="src-str">&quot;DELIMCE&quot;</span><span class="src-sym">;&nbsp;&nbsp;</span><span class="src-comm">//&nbsp;SMTP&nbsp;username</span></div></li>
+<li><div class="src-line"><a name="a10"></a>&nbsp;<span class="src-var">$SMTPPASS&nbsp;</span>=&nbsp;<span class="src-str">&quot;secret&quot;</span><span class="src-sym">;&nbsp;</span><span class="src-comm">//&nbsp;SMTP&nbsp;password</span></div></li>
+<li><div class="src-line"><a name="a11"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a12"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a13"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a14"></a>&nbsp;<span class="src-comm">/******************&nbsp;NO&nbsp;ALTERE&nbsp;ESTE&nbsp;BLOQUE&nbsp;**************************/</span></div></li>
+<li><div class="src-line"><a name="a15"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;&nbsp;require<span class="src-sym">(</span><span class="src-str">'redirect.php'</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a17"></a>&nbsp;&nbsp;<span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">'dbconfig.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a18"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a19"></a>&nbsp;<span class="src-comm">/******************PARA&nbsp;SUBIR&nbsp;ARCHIVOS*************************/</span></div></li>
+<li><div class="src-line"><a name="a20"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;<span class="src-comm">///////CATALOGO&nbsp;DE&nbsp;PRODUCTOS&nbsp;&nbsp;-&nbsp;redimensionar&nbsp;imagen&nbsp;media</span></div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;<span class="src-var">$image_rmw&nbsp;</span>=&nbsp;<span class="src-num">250</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;<span class="src-var">$image_rml&nbsp;</span>=&nbsp;<span class="src-num">204</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;<span class="src-comm">///////CATALOGO&nbsp;DE&nbsp;PRODUCTOS&nbsp;-&nbsp;redimensionar&nbsp;turnate</span></div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;<span class="src-var">$image_rtw&nbsp;</span>=&nbsp;<span class="src-num">50</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;<span class="src-var">$image_rtl&nbsp;</span>=&nbsp;<span class="src-num">41</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a28"></a><span class="src-comm">///////CONTENIDO&nbsp;&nbsp;CATEGORIA&nbsp;-&nbsp;redimensionar&nbsp;imagen&nbsp;media</span></div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;<span class="src-var">$cont_cat_imgmed_width&nbsp;</span>=&nbsp;<span class="src-num">5</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;<span class="src-var">$cont_cat_imgmed_height&nbsp;</span>=&nbsp;<span class="src-num">5</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;<span class="src-comm">///////CONTENIDO&nbsp;CATEGORIA&nbsp;-&nbsp;redimensionar&nbsp;turnate</span></div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;<span class="src-var">$cont_cat_imgsmall_width&nbsp;</span>=&nbsp;<span class="src-num">267</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;<span class="src-var">$cont_cat_imgsmall_height&nbsp;</span>=&nbsp;<span class="src-num">200</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a35"></a><span class="src-comm">//////CONTENIDO&nbsp;&nbsp;ARTÍCULO&nbsp;-&nbsp;redimensionar&nbsp;imagen&nbsp;media</span></div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;<span class="src-var">$cont_art_imgmed_width&nbsp;</span>=&nbsp;<span class="src-num">5</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;<span class="src-var">$cont_art_imgmed_height&nbsp;</span>=&nbsp;<span class="src-num">5</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;<span class="src-comm">///////CONTENIDO&nbsp;ARTICULO&nbsp;-&nbsp;redimensionar&nbsp;turnate</span></div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;<span class="src-var">$cont_art_imgsmall_width&nbsp;</span>=&nbsp;<span class="src-num">200</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;<span class="src-var">$cont_art_imgsmall_height&nbsp;</span>=&nbsp;<span class="src-num">200</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a42"></a><span class="src-comm">//////CONTENIDO&nbsp;&nbsp;GALERIAS&nbsp;DE&nbsp;ARTÍCULO&nbsp;-&nbsp;redimensionar&nbsp;imagen&nbsp;media</span></div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;<span class="src-var">$cont_gal_imgmed_width&nbsp;</span>=&nbsp;<span class="src-num">560</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;<span class="src-var">$cont_gal_imgmed_height&nbsp;</span>=&nbsp;<span class="src-num">420</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;<span class="src-comm">///////CONTENIDO&nbsp;GALERÍAS&nbsp;DE&nbsp;ARTICULO&nbsp;-&nbsp;redimensionar&nbsp;turnate</span></div></li>
+<li><div class="src-line"><a name="a46"></a>&nbsp;<span class="src-var">$cont_gal_imgsmall_width&nbsp;</span>=&nbsp;<span class="src-num">80</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;<span class="src-var">$cont_gal_imgsmall_height&nbsp;</span>=&nbsp;<span class="src-num">80</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;<span class="src-var">$TMAX&nbsp;</span>=&nbsp;<span class="src-str">&quot;20&quot;&nbsp;</span><span class="src-comm">////TAMANO&nbsp;MAXIMO&nbsp;DE&nbsp;ARCHIVOS&nbsp;A&nbsp;SUBIR&nbsp;EN&nbsp;MB</span></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a55"></a><span class="src-php">?&gt;</span></div></li>
+</ol>
+    </div>
+</div>

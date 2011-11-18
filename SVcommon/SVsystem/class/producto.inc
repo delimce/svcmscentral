@@ -1,0 +1,258 @@
+<?php
+includeCommonClass('formulario');
+includeCommonClass('funciones');
+includeCommonClass('widget');
+
+/**
+ *
+ * Clase que representa las acciones que se pueden ejecutar sobre un producto
+ * @author Luis Poggi
+ * @package svcms2
+ * @subpackage elementos
+ *
+ */
+class producto extends widget{
+	/**
+	 * Id del producto
+	 * @var Number
+	 */
+	var $id;
+
+	/**
+	 * Nombre del producto, considera los acentos y caracteres especiales ya transformados
+	 * @var String
+	 */
+	var $nombre;
+
+	/**
+	 * Resumen descriptivo del producto
+	 * @var String
+	 */
+	var $resumen;
+
+	/**
+	 * Precios del producto con dos decimales.
+	 * <br>Los precios se guardan según la moneda del mismo
+	 * @var float(9,2)
+	 */
+	var $precio;
+
+	/**
+	 * Tipo de empaque del producto. No posee ninguna validación
+	 * @var String
+	 */
+	var $empaque;
+
+	/**
+	 * Medidas del producto. No posee ninguna validación
+	 * @var String(20)
+	 */
+	var $medidas;
+
+	/**
+	 * Peso del producto escrito. No posee ninguna validación
+	 * @var String(20)
+	 */
+	var $peso;
+
+	/**
+	 * Cantidad de productos en el inventario. Este valor se actualiza automáticamente con cada compra
+	 * @var Number
+	 */
+	var $stock;
+
+	/**
+	 * Última fecha de modificación del producto. Este valor se actualiza automáticamente con cada modificación al producto desde el admin
+	 * @var DateTime
+	 */
+	var $fecha_mod;
+
+	/**
+	 * Imagenes del producto, si existe, la imagen principal se encuentra en $imagen[0].
+	 * @var String Array
+	 */
+	var $imagen;
+
+	/**
+	 * Esta variable permite configurar si se buscan TODOS los productos o sólo aquellos con stock > 0. Admite los siguiente valores
+	 * <li> 1, para obtener los productos con stock > 0
+	 * <li> 0, para obtener todos los productos
+	 * @var number
+	 */
+	var $activos;
+
+	/**
+	 * Clase utilitaria. Esta deprecada y en proceso de eliminación
+	 * @var funciones
+	 */
+	var $funciones;
+
+	/**
+	 * Ruta a partir de la que se encuentran las imagenes del producto. Esta en proceso de ser deprecada
+	 * @var unknown_type
+	 */
+	var $rutaBase;
+
+	/**
+	 * Link del articulo en el site
+	 * @var String
+	 */
+	var $link;
+
+        	function newInstanceFromUrl($url,$rutaBase){
+		$this->funciones = new funciones();
+		$nombre = str_replace(array('-','/'), array('',''), $url);
+		$queryId = "SELECT id FROM producto WHERE ".$this->funciones->limpiarUrlBD("nombre")." ='".$nombre."'";
+		$tool = new formulario('db');
+		$idProducto = $tool->simple_db($queryId);
+		$this->newInstance($idProducto,$rutaBase);
+	}
+
+
+
+	/**
+	 * instance
+	 * @param $id, identificador del producto a obtener
+	 * @param $rutaBase, Ruta Base para las imagenes... En proceso de ser deprecado
+	 */
+
+	function newInstance($id,$rutaBase){
+		$this->rutaBase = $rutaBase;
+		$this->funciones = new funciones();
+		$conex = new formulario('db');
+		$query = " select id,nombre,precio,empaque,medidas,peso,stock,fecha_mod,resumen from producto p where p.id=".$id;
+		$items = $conex->estructura_db($query);
+		if(count($items)>0){
+			$item = $items[0];
+			$this->id = $item['id'];
+			$this->nombre = utf8_encode($item['nombre']);
+			$this->empaque = utf8_encode($item['empaque']);
+			$this->medidas = utf8_encode($item['medidas']);
+			$this->peso = utf8_encode($item['peso']);
+			$this->stock = utf8_encode($item['stock']);
+			$this->precio = utf8_encode($item['precio']);
+			$this->fecha_mod = utf8_encode($item['fecha_mod']);
+			$this->resumen = utf8_encode($item['resumen']);
+			$this->link = "/producto-".$this->funciones->limpiarUrl($item['nombre']);
+		}
+
+		$queryImg = " select ruta from imagen_producto where prod_id = ".$id;
+		$imgs = $conex->estructura_db($queryImg);
+		if(count($imgs)>0){
+			$i = 0;
+			foreach($imgs as $img){
+				$imagen[$i] = $this->rutaBase."/producto/turn/".utf8_encode($img['ruta']);
+				$i++;
+			}
+		}
+		$conex->cerrar();
+	}
+
+
+	/**
+	 * Enter description here ...
+	 * @param unknown_type $id
+	 * @param unknown_type $cantidad
+	 */
+	function comprar($id, $cantidad){
+		$query = " update producto set stock = stock - ".$cantidad." where id=".$id;
+		$conex = new formulario('db');
+		$conex->query($query);
+		$conex->cerrar();
+	}
+
+
+	/**
+	 * Permite setear la ruta base para las imagenes.... Está en proceso de ser deprecado
+	 * @param $ruta
+	 */
+	function setRutaBase($ruta){
+		$this->rutaBase = $ruta;
+	}
+
+	/**
+	 *
+	 * Funcion para obtener un conjunto de productos dadas un conjunto de condiciones. Esta función es afectada por el parámetro de la clase "activos"
+	 * @param $condiciones, condiciones del query a ejecutar para obtener los productos, si no se coloca trae todos los productos
+	 * @param $orderBy, condiciones de ordenamiento de los productos, si no se coloca se ordena por nombre e id de los productos
+	 * @param $maxResults, número máximo de resultados a obtener, 0 significa infinitos
+	 */
+	function obtenerProductos($condiciones="", $orderBy="", $maxResults=0){
+		$query = " select id,nombre,precio,empaque,medidas,peso,stock,fecha_mod,(select ruta from imagen_producto where prod_id = p.id limit 1) as imagen, resumen from producto p  ";
+		if ($this->activos==1){
+			$query.= " where stock>=1 ";
+			if ((isset($condiciones)) && $condiciones!=''){
+				$query.= " and ".$condiciones;
+			}
+		}else{
+			if ((isset($condiciones)) && $condiciones!=''){
+				$query.= " where ".$condiciones;
+			}
+		}
+
+		if ((isset($orderBy)) && $orderBy!=''){
+			$query.= " order by ".$orderBy;
+		}else{
+			$query.= " order by orden, nombre, id ";
+		}
+		return $this->obtenerProductosByQuery($query, $maxResults);
+	}
+
+	/**
+	 *
+	 * Función para obtener un conjunto de productos a partir de un query específico a la Base de datos
+	 * @param $query, query a ejecutar
+	 * @param $maxResults, número máximo de resultados a obtener. 0 Significa infinitos
+	 */
+	function obtenerProductosByQuery($query, $maxResults){
+		$ConnArt = new formulario('db');
+		//		$moneda = $ConnArt->obtenerConfiguracionProductos("MONEDA");
+
+		$items = $ConnArt->estructura_db($query);
+		if(count($items)>0){
+			$i=0;
+			foreach($items as $item){
+				$datos[$i]['moneda'] = $moneda;
+				$datos[$i]['id'] = $item['id'];
+				$datos[$i]['link'] = "/producto-".$this->funciones->limpiarUrl($item['nombre']);
+				$datos[$i]['nombre'] = utf8_encode($item['nombre']);
+				$datos[$i]['empaque'] = utf8_encode($item['empaque']);
+				$datos[$i]['medidas'] = utf8_encode($item['medidas']);
+				$datos[$i]['peso'] = utf8_encode($item['peso']);
+				$datos[$i]['stock'] = utf8_encode($item['stock']);
+				$datos[$i]['precio'] = utf8_encode($item['precio']);
+				$datos[$i]['fecha_mod'] = utf8_encode($item['fecha_mod']);
+				$datos[$i]['resumen'] = utf8_encode(substr($item['resumen'],0,512));
+				$datos[$i]['srcImg'] = $this->rutaBase."/producto/turn/".utf8_encode($item['imagen']);
+				$i=$i+1;
+				if ($maxResults>0 && $maxResults<=$i){break;}
+			}
+		}
+		$ConnArt->cerrar();
+		return $datos;
+	}
+
+        	/**
+	 * Constructor Base para operaciones masivas de productos o creación de un producto nuevo
+	 */
+	function __construct (){
+		$this->activos=1;
+		$this->funciones = new funciones();
+	}
+
+  	function updateVisita(){
+		$tool = new formulario('db');
+		$queryUpdate = " update producto set num_visitas=num_visitas+1 where id=".$this->id;
+		$tool->query($queryUpdate);
+	}
+
+	function show(){
+		if (isset($this->id)){
+			eval(includeClosingTag().$this->formatoPresentacion);
+		}else{
+			include $this->formatoSinResultados;
+		}
+
+	}
+}
+?>

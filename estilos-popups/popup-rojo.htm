@@ -1,0 +1,110 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Popup de prueba - azul</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="estilos-popup-rojo.css" rel="stylesheet" type="text/css">
+<!--ESTILOS-->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+
+</script>
+
+</head>
+
+<body class="body-popup">
+<div class="popup-titulo">Reg&iacute;strese en nuestra base de datos</div>
+
+<div class="popup-instrucciones"> <p>Asi se verán las Instrucciones al usuario </p>
+</div>
+
+<div class="popup-mensajes"> Asi se verán  los mensajes al usuario 
+</div>
+
+<form action="" method="post" name="form1" onSubmit="return validar();">
+ <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+   <td align="center">
+   <table width="90%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+     <td width="26%" class="popup-form-title"><font color="#FF0000">*</font> Nombre y Apellido</td>
+     <td width="74%"><input name="r_nombre" type="text" class="popup-form-box" size="45">
+     </td>
+    </tr>
+    <tr>
+     <td class="popup-form-title"><font color="#FF0000">*</font> Su e-mail de contacto</td>
+     <td><input name="r_email" type="text"	class="popup-form-box" size="45">
+     </td>
+    </tr>
+    <tr>
+     <td class="popup-form-title"><font color="#FF0000">*</font> Su contraseña deseada</td>
+     <td><input name="r_password" type="password"	class="popup-form-box" id="r_password" size="20">
+     </td>
+    </tr>
+    <tr>
+     <td class="popup-form-title"><font color="#FF0000">*</font> Repita la contraseña</td>
+     <td><input name="password" type="password"	class="popup-form-box" id="password" size="20"></td>
+    </tr>
+    <tr>
+     <td class="popup-form-title"><font color="#FF0000">*</font> Tel&eacute;fonos fijos (hab. ofic, fax...)</td>
+     <td><input name="r_tlf1" type="text"class="popup-form-box" id="r_tlf1" size="45">
+     </td>
+    </tr>
+    <tr>
+     <td class="popup-form-title">Celular</td>
+     <td><input name="r_celular" type="text" class="popup-form-box" size="30">
+     </td>
+    </tr>
+    <tr>
+     <td class="popup-form-title">Ciudad donde vive</td>
+     <td><input name="r_ciudad" type="text" class="popup-form-box" size="20">
+     </td>
+    </tr>
+    <tr>
+     <td class="popup-form-title">Pa&iacute;s</td>
+     <td><input name="r_pais" type="text" class="popup-form-box" size="20">
+</td>
+    </tr>
+    <tr>
+     <td class="popup-form-title">&iquest;A qu&eacute; empresa representa?</td>
+     <td><input name="r_empresa" type="text"	class="popup-form-box" size="60">
+     </td>
+    </tr>
+    <tr>
+    <td class="popup-form-title">Direcci&oacute;n de su sitio web ( si tuviere)</td>
+    <td><input name="r_web" type="text"class="popup-form-box" id="r_web" size="45"></td>
+    </tr>
+    <tr>
+    <td class="popup-form-title"><font color="#FF0000">*</font> C&eacute;dula de Identidad o Rif de su empresa</td>
+    <td><input name="r_rif" type="text" class="popup-form-box" id="r_rif" size="30">
+    </td>
+    </tr>
+    <tr>
+     <td class="popup-form-title">Direcci&oacute;n fiscal</td>
+     <td><textarea name="r_direccion" cols="80" rows="5" class="popup-form-box" id="r_direccion"></textarea>
+     </td>
+    </tr>
+   </table></td>
+  </tr>
+  <tr>
+   <td align="center">&nbsp;</td>
+  </tr>
+  <tr>
+   <td width="50%" align="center"><input name="Submit" type="submit" class="popup-form-button" value="Regístrese en Nuestra Base de Datos">
+   &nbsp; 
+   
+   
+   <input name="Submit2" type="button" class="popup-form-button" value="Cancelar" onClick="window.close();"></td></tr>
+ </table>
+</form>
+</body>
+</html>
