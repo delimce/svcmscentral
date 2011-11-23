@@ -4,8 +4,7 @@ $profile = 'admin'; /////////////// perfil requerido
 include("../../SVsystem/config/setup.php"); ////////setup
 include("../../SVsystem/class/tools.php");
 
- 	$datos = new tools();
- 	$datos->autoconexion();
+ 	$datos = new tools('db');
  
 
 

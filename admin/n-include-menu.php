@@ -25,9 +25,9 @@
 
 ?>
 
-<a href="/admin/main.php" title="ir a la página principal" class="especial">[^] Volver al inicio</a>
-<a href="/admin/opciones.php" title="opciones del sistema" class="especial">opciones</a>
-<a href="/admin/edit_index/editar-index.php" title="editar index o  home page del web site" >editar index</a>
+<a href="./main.php" title="ir a la página principal" class="especial">[^] Volver al inicio</a>
+<a href="./opciones.php" title="opciones del sistema" class="especial">opciones</a>
+<a href="./edit_index/editar-index.php" title="editar index o  home page del web site" >editar index</a>
   
 
 

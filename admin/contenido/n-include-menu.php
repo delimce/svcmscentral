@@ -28,12 +28,12 @@
 ?>
 
 
-<a href="/admin/main.php" title="ir a la página principal" class="especial2">[^] inicio</a>
+<a href="main.php" title="ir a la página principal" class="especial2">[^] inicio</a>
 <a href="arbol.php"  title="administrar arbol de contenidos" class="especial">árbol</a> 
 <a href="articulos-fastedit.php"  title="edición masiva de artículos" class="especial">edición rápida</a> 
 <a href="datos-adicionales.php"  title="administrar campos adicionales" class="especial">campos adicionales</a> 
 <a href="opciones.php"  title="opciones del sistema de contenido" class="especial">opciones </a> 
-<a href="/admin/edit_index/editar-index.php" title="editar index o  home page del web site" >editar index</a>
+<a href="../edit_index/editar-index.php" title="editar index o  home page del web site" >editar index</a>
 
 
 <!--FIN BOTON MAIN-->

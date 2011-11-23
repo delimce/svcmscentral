@@ -26,8 +26,8 @@
 ?>
 
 
-<a href="/admin/main.php" title="ir a la página principal" class="especial2">[^] Volver al inicio</a>
-<a href="/admin/opciones.php" title="ir a la página principal" class="especial2">opciones</a>
+<a href="main.php" title="ir a la página principal" class="especial2">[^] Volver al inicio</a>
+<a href="opciones.php" title="ir a la página principal" class="especial2">opciones</a>
 <a href="#footer" class="especial" title="volver al home">pie de pagina </a>  
 <a href="#yt" class="especial" title="volver al home">codigo html libre </a>  
 <a href="#aec" class="especial" title="volver al home">destacados </a> 
