@@ -14,31 +14,57 @@ $tool->autoconexion();
 	
 			if($_REQUEST['opcion']==1){
 			
-					$ids 	 = $_REQUEST['ids'];
-					$nombre  = $_REQUEST['nombre'];
-					$resumen  = $_REQUEST['resumen'];
-					$autor  = $_REQUEST['autor'];
-					$activos = $_REQUEST['activos'];
+					$ids 	  	 = $_REQUEST['ids'];
+					$origen   	 = $_REQUEST['origen'];
+					$categoria1  = $_REQUEST['categoria1'];
+					$categoria2  = $_REQUEST['categoria2'];
+					$categoria3  = $_REQUEST['categoria3'];
+					$categoria4  = $_REQUEST['categoria4'];
+					$categoria5  = $_REQUEST['categoria5'];
+					$rif         = $_REQUEST['rif'];
+					$nombre      = $_REQUEST['nombre'];
+					$password      = $_REQUEST['password'];
+					$email      = $_REQUEST['email'];
+					$email2      = $_REQUEST['email2'];
+					$web      = $_REQUEST['web'];
+					$empresa      = $_REQUEST['empresa'];
+					$actividad      = $_REQUEST['actividad'];
+					$cargo      = $_REQUEST['cargo'];
+					$tlf1      = $_REQUEST['tlf1'];
+					$tlf2      = $_REQUEST['tlf2'];
+					$celular      = $_REQUEST['celular'];
+					$fax      = $_REQUEST['fax'];
+					$direccion      = $_REQUEST['direccion'];
+					$zip      = $_REQUEST['zip'];
+					$ciudad      = $_REQUEST['ciudad'];
+					$estado      = $_REQUEST['estado'];
+					$pais      = $_REQUEST['pais'];
+					$notas      = $_REQUEST['notas'];
+										
 					
-					$campos = $tool->llenar_array("titulo¥resumen¥autor¥estatus",'¥');
+					$campos = $tool->llenar_array("origen¥categoria1¥categoria2¥categoria3¥categoria4¥categoria5¥rif¥nombre¥password¥email¥email2¥web¥empresa¥actividad¥cargo¥tlf1¥tlf2¥celular¥fax¥direccion¥zip¥ciudad¥estado¥pais¥notas",'¥');
 					
+						$tool->abrir_transaccion();
+						
 						for($i=0;$i<count($ids);$i++){ ////modifica todos los registros
 									
-								$vector = $tool->llenar_array("$nombre[$i]¥$resumen[$i]¥$autor[$i]¥0",'¥');
-								$tool->update('articulo',$campos,$vector,"id = '$ids[$i]' ");
+								$vector = $tool->llenar_array("$origen[$i]¥$categoria1[$i]¥$categoria2[$i]¥$categoria3[$i]¥$categoria4[$i]¥$categoria5[$i]¥$rif[$i]¥$nombre[$i]¥$password[$i]¥$email[$i]¥$email2[$i]¥$web[$i]¥$empresa[$i]¥$actividad[$i]¥$cargo[$i]¥$tlf1[$i]¥$tlf2[$i]¥$celular[$i]¥$fax[i]¥$direccion[$i]¥$zip[$i]¥$ciudad[$i]¥$estado[$i]¥$pais[$i]¥$notas[$i]",'¥');
+							
+								$tool->update('cliente',$campos,$vector,"id = '$ids[$i]' ");
 								unset($vector);
 									
 						}
-					
-					
-						if(!empty($activos[0])){ 
 						
-								$iid = implode(',',$activos);
-								$tool->query("update articulo set estatus = 1 where id in ($iid) ");
-								
-						}		
+						$tool->query("update cliente set activo = 0");
+						$activos = $_REQUEST['activos'];
+						$iid = implode(',',$activos);
+						$tool->query("update cliente set activo = 1 where id in ($iid) ");
+						
+						$tool->cerrar_transaccion();
 					
-			}else if($_REQUEST['opcion']==2){
+							
+					
+			}else if($_REQUEST['opcion']==2){ ////borrar usuarios
 				
 					
 			
@@ -74,80 +100,21 @@ $tool->autoconexion();
 					}	
 			
 			
-			} else if($_REQUEST['opcion']==3) {
-			
-					
-				 if($_SESSION['MOVER'][0]>0){
-				 
-					$activos = $_REQUEST['borrados'];
-					$valores1 = $_SESSION['MOVER'][0];
-					$valores2 = $_SESSION['MOVER'][1];
-					
-					$iid = implode(',',$activos);
-					$tool->query("update articulo set cat_nivel = '$valores1', cat_id = '$valores2'  where id in ($iid) ");
-				  }
-					unset($_SESSION['MOVER']);
-				
-				
-			
-			}else{
-			
-				
-						$activos = $_REQUEST['borrados'];
-						$valor = $_SESSION['MOVER'];
-						
-						
-										
-					for($w=0;$w<count($activos);$w++){
-						
-						$valores = $tool->array_query2("SELECT a.autor, a.tipo_autor, a.titulo, a.fecha, a.resumen,
-												a.texto, a.imagen, a.extra,  a.estatus, a.revisado 
-												FROM articulo a where id = '{$activos[$w]}' ");
-																	
-						$elementos = $tool->estructura_db("select * from cont_adjunto where art_id = '{$activos[$w]}' order by id");						
-													
-						$valores[10] = $valor[0];
-						$valores[11] = $valor[1];
-						$valores[12] = $tool->simple_db("select max(orden)+1 as total from articulo where cat_nivel = $valor[0] and cat_id = $valor[1] ");
-						
-						$campos = "autor,tipo_autor,titulo,fecha,resumen,texto,imagen,extra,estatus,revisado,cat_nivel,cat_id,orden";
-							
-						$tool->insertar2("articulo",$campos,$valores);
-						$NUEVO_ID = $tool->ultimoID;
-						
-						
-						
-						for($i=0;$i<count($elementos);$i++){
-						
-							$valores3[0] = $NUEVO_ID;
-							$valores3[1] = $elementos[$i]['tipo'];
-							$valores3[2] = $elementos[$i]['ruta'];
-							$valores3[3] = $elementos[$i]['titulo'];
-							
-							
-							$tool->insertar2("cont_adjunto","art_id,tipo,ruta,titulo",$valores3);
-						
-						}
-						
-						
-						
-						}
-						
-						
-						unset($_SESSION['MOVER']);
-		
-			
-			}	
+			} 	
 			
 	
 	}
 	
 	
-	$cat1 = $tool->array_query("select distinct categoria1 from cliente order by categoria1");
-	$cat2 = $tool->array_query("select distinct categoria2 from cliente order by categoria2");
-	$cat3 = $tool->array_query("select distinct categoria3 from cliente order by categoria3");
+	$cat1 = $tool->array_query("select distinct categoria1 from cliente where trim(categoria1) !='' order by categoria1");
+	$cat2 = $tool->array_query("select distinct categoria2 from cliente where trim(categoria2) !='' order by categoria2");
+	$cat3 = $tool->array_query("select distinct categoria3 from cliente where trim(categoria3) !='' order by categoria3");
+	$cat4 = $tool->array_query("select distinct categoria4 from cliente where trim(categoria4) !='' order by categoria4");
+	$cat5 = $tool->array_query("select distinct categoria5 from cliente where trim(categoria5) !='' order by categoria5");
 	
-	$tool->query("select * from cliente a  order by nombre ");
+	/////en caso de ordenamiento
+	if(isset($_REQUEST['orden'])) $pordena = $_REQUEST['orden'].',';
+	$tool->query("select * from cliente a  order by $pordena id asc ");
 	
 
 
@@ -178,6 +145,14 @@ function MM_goToURL() { //v3.0
   for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
 }
 //-->
+
+	function ordenar(valor){
+		
+		location.replace('usuarios-fastedit.php?orden='+valor);
+		
+	}
+
+
 </script>
 
 
@@ -209,16 +184,20 @@ function MM_goToURL() { //v3.0
 
 <form name="form1" method="post" action="">
 <input name="opcion" type="hidden" id="opcion" value="1">
-<table width="3900" border="0" cellspacing="3" cellpadding="0">
+<table width="4300" border="0" cellspacing="3" cellpadding="0">
 <!--CABECERA DE LA TABLA DE ARTICULOS-->
+ <?php echo $encabezado = '
+ 
  <tr>
-
-<td width="3%" class="td-headertabla">Origen</td>
-<td width="9%" class="td-headertabla">Categoria 1</td>
-<td width="13%" class="td-headertabla">Categoria 2</td>
-<td width="9%" class="td-headertabla">Categoria 3</td>
+<td width="3%" align="center" class="td-headertabla" id="id" style="cursor:pointer" title="ordenar por ID" onclick="ordenar(this.id)">ID</td>
+<td width="3%" class="td-headertabla" id="origen" style="cursor:pointer" title="ordenar por Origen" onclick="ordenar(this.id)">Origen</td>
+<td width="7%" class="td-headertabla">Categoria 1</td>
+<td width="8%" class="td-headertabla">Categoria 2</td>
+<td width="7%" class="td-headertabla">Categoria 3</td>
+<td width="7%" class="td-headertabla">Categoria 4</td>
+<td width="6%" class="td-headertabla">Categoria 5</td>
 <td width="3%" class="td-headertabla">Rif</td>
-<td width="3%" class="td-headertabla">Nombre</td>
+<td width="3%" class="td-headertabla" id="nombre" style="cursor:pointer" title="ordenar por nombre" onclick="ordenar(this.id)">Nombre</td>
 <td width="3%" class="td-headertabla">Password</td>
 <td width="3%" class="td-headertabla">Email</td>
 <td width="3%" class="td-headertabla">Email2</td>
@@ -232,29 +211,44 @@ function MM_goToURL() { //v3.0
 <td width="3%" class="td-headertabla">Fax</td>
 <td width="5%" class="td-headertabla">Direcci&oacute;n</td>
 <td width="3%" class="td-headertabla">Zip</td>
-<td width="3%" class="td-headertabla">Ciudad</td>
-<td width="3%" class="td-headertabla">Estado</td>
-<td width="3%" class="td-headertabla">pais</td>
-<td width="4%" class="td-headertabla">Noticias Titulo</td>
-<td width="4%" class="td-headertabla">Noticias Texto</td>
- <td width="1%" class="td-headertabla"><img src="../icon/icon-ojo-pelao.gif" width="16" height="16" title="¿Activo o inactivo?"></td>
+<td width="3%" class="td-headertabla" id="ciudad" style="cursor:pointer" title="ordenar por ciudad" onclick="ordenar(this.id)">Ciudad</td>
+<td width="3%" class="td-headertabla" id="estado" style="cursor:pointer" title="ordenar por estado" onclick="ordenar(this.id)">Estado</td>
+<td width="3%" class="td-headertabla" id="pais" style="cursor:pointer" title="ordenar por pais" onclick="ordenar(this.id)">pais</td>
+<td width="4%" class="td-headertabla">Notas</td>
+<td width="1%" class="td-headertabla"><img src="../icon/icon-ojo-pelao.gif" width="16" height="16" title="¿Activo o inactivo?"></td>
   <td width="1%" class="td-headertabla"><img src="../icon/botonsito-confirmar-pago-done.jpg" width="15" height="15" title="Seleccionar"></td>
  </tr>
+ 
+ '; ?>
+ 
+ 
 <!--FIN CABECERA DE LA TABLA DE ARTICULOS-->
 
 <!--loop de artículos--> 
-<?php while ($row = mysql_fetch_assoc($tool->result)) { ?>
+<?php 
+
+	$ii=1; ///loop para controlar el encabezado
+	$repite = 10; ///repetir encabezado cada tantos..
+
+	while ($row = mysql_fetch_assoc($tool->result)) {
+	
+	if($ii==$repite+1){ echo $encabezado; $ii=1; } 
+	
+	 ?>
 
 <tr>
+  <td align="center" class="fastedit-data-td"><?=$row['id'] ?></td>
   
   <td class="fastedit-data-td">
   <div class="fastedit-categorias"><?php echo $row['categoria']  ?>
     <input name="ids[]" type="hidden" id="ids[]" value="<?=$row['id'] ?>">
   </div>
   <input name="origen[]" type="text" class="form-box" id="origen[]" value="<?=$row['origen'] ?>" size="20"></td>
-  <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria1[]",$cat1,$cat1,false,$row['categoria1']); ?>&nbsp;</td>
-  <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria2[]",$cat2,$cat2,false,$row['categoria2']); ?></td>
-  <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria3[]",$cat3,$cat3,false,$row['categoria3']); ?></td>
+  <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria1[]",$cat1,$cat1,' ',$row['categoria1'],false,'',false,false,'n-form-box'); ?>&nbsp;</td>
+  <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria2[]",$cat2,$cat2,' ',$row['categoria2'],false,'',false,false,'n-form-box'); ?></td>
+  <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria3[]",$cat3,$cat3,' ',$row['categoria3'],false,'',false,false,'n-form-box'); ?></td>
+  <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria4[]",$cat4,$cat4,' ',$row['categoria4'],false,'',false,false,'n-form-box'); ?></td>
+  <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria5[]",$cat5,$cat5,' ',$row['categoria5'],false,'',false,false,'n-form-box'); ?></td>
   <td class="fastedit-data-td"><input name="rif[]" type="text" class="form-box" id="rif[]" value="<?=$row['rif'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><input name="nombre[]" type="text" class="form-box" id="nombre[]" value="<?=$row['nombre'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><input name="password[]" type="text" class="form-box" id="password[]" value="<?=$row['password'] ?>" size="20" /></td>
@@ -273,15 +267,20 @@ function MM_goToURL() { //v3.0
   <td class="fastedit-data-td"><input name="ciudad[]" type="text" class="form-box" id="ciudad[]" value="<?=$row['ciudad'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><input name="estado[]" type="text" class="form-box" id="estado[]" value="<?=$row['estado'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><input name="pais[]" type="text" class="form-box" id="pais[]" value="<?=$row['pais'] ?>" size="20" /></td>
-  <td class="fastedit-data-td"><textarea name="noticias_titulo[]" cols="25" class="form-box" id="noticias_titulo[]"><?=$row['noticias_titulo'] ?>
+  <td class="fastedit-data-td"><textarea name="notas[]" cols="25" class="form-box" id="noticias_titulo[]"><?=$row['notas'] ?>
   </textarea></td>
-  <td class="fastedit-data-td"><textarea name="noticias_texto[]" cols="25" class="form-box" id="noticias_texto[]"><?=$row['noticias_texto'] ?>
-  </textarea></td>
-<td  class="fastedit-data-td"><input name="activos[]" type="checkbox" id="activos[]" value="<?=$row['id'] ?>" <?php if($row['estatus']==1) echo 'checked'; ?>></td>
+  <td  class="fastedit-data-td"><input name="activos[]" type="checkbox" id="activos[]" value="<?=$row['id'] ?>" <?php if($row['activo']==1) echo 'checked'; ?>></td>
   <td class="fastedit-data-td"><input name="borrados[]" type="checkbox" id="borrados[]" value="<?=$row['id'] ?>"></td>
 </tr>
 <!--fin loop de articulos--> 
-<?php } ?>
+<?php
+
+	$ii++;
+
+ }
+ 
+ 
+  ?>
 </table>
 
 
@@ -292,15 +291,10 @@ function MM_goToURL() { //v3.0
 
 
 <center>
-<input type="button" onClick="document.form1.opcion.value='2'; document.form1.submit();" class="form-button" name="Button" value=" [-] Borrar Seleccionados">  &nbsp;
-
- <input name="Button" type="button" class="form-button" onClick="popup('mover_art_mass.php', 'nuevo','600','600');" value="[^] Mover Seleccionados a Otra Categoría..."> &nbsp; 
-
- <input name="Button2" type="button" class="form-button" onClick="popup('copiar_art_mass.php', 'nuevo','600','600');" value=" [cc] Copiar Seleccionados a Otra Categoría...">&nbsp; 
-
+<input type="button" onClick="document.form1.opcion.value='2'; document.form1.submit();" class="form-button" name="Button" value=" [-] Borrar Seleccionados">  &nbsp;&nbsp;
 <input type="button" onClick="document.form1.opcion.value='1'; document.form1.submit();" class="form-button" name="Button" value="[ok] Aplicar"> &nbsp;
 
-<input name="Reset" type="reset" class="form-button" onClick="MM_goToURL('parent','arbol.php');return document.MM_returnValue" value="[<]  Volver">
+<input name="Reset" type="reset" class="form-button" onClick="MM_goToURL('parent','index.php');return document.MM_returnValue" value="[<]  Volver">
 
 </center>
 
