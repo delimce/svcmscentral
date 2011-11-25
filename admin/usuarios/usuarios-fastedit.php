@@ -95,7 +95,7 @@ $tool->autoconexion();
 							////////////////////////////////////////////////////////
 							
 							
-							$tool->query("delete from articulo where id in ($iid) ");
+							$tool->query("delete from cliente where id in ($iid) ");
 							
 					}	
 			
@@ -106,11 +106,11 @@ $tool->autoconexion();
 	}
 	
 	
-	$cat1 = $tool->array_query("select distinct categoria1 from cliente where trim(categoria1) !='' order by categoria1");
-	$cat2 = $tool->array_query("select distinct categoria2 from cliente where trim(categoria2) !='' order by categoria2");
-	$cat3 = $tool->array_query("select distinct categoria3 from cliente where trim(categoria3) !='' order by categoria3");
-	$cat4 = $tool->array_query("select distinct categoria4 from cliente where trim(categoria4) !='' order by categoria4");
-	$cat5 = $tool->array_query("select distinct categoria5 from cliente where trim(categoria5) !='' order by categoria5");
+	$cat1 = $tool->array_query("select distinct nombre from cliente_categoria where grupo = 1 order by nombre");
+	$cat2 = $tool->array_query("select distinct nombre from cliente_categoria where grupo = 2 order by nombre");
+	$cat3 = $tool->array_query("select distinct nombre from cliente_categoria where grupo = 3 order by nombre");
+	$cat4 = $tool->array_query("select distinct nombre from cliente_categoria where grupo = 4 order by nombre");
+	$cat5 = $tool->array_query("select distinct nombre from cliente_categoria where grupo = 5 order by nombre");
 	
 	/////en caso de ordenamiento
 	if(isset($_REQUEST['orden'])) $pordena = $_REQUEST['orden'].',';
@@ -189,6 +189,8 @@ function MM_goToURL() { //v3.0
  <?php echo $encabezado = '
  
  <tr>
+<td width="1%" class="td-headertabla"><img src="../icon/icon-ojo-pelao.gif" width="16" height="16" title="¿Activo o inactivo?"></td>
+<td width="1%" class="td-headertabla"><img src="../icon/botonsito-confirmar-pago-done.jpg" width="15" height="15" title="Seleccionar"></td>
 <td width="3%" align="center" class="td-headertabla" id="id" style="cursor:pointer" title="ordenar por ID" onclick="ordenar(this.id)">ID</td>
 <td width="3%" class="td-headertabla" id="origen" style="cursor:pointer" title="ordenar por Origen" onclick="ordenar(this.id)">Origen</td>
 <td width="7%" class="td-headertabla">Categoria 1</td>
@@ -215,8 +217,6 @@ function MM_goToURL() { //v3.0
 <td width="3%" class="td-headertabla" id="estado" style="cursor:pointer" title="ordenar por estado" onclick="ordenar(this.id)">Estado</td>
 <td width="3%" class="td-headertabla" id="pais" style="cursor:pointer" title="ordenar por pais" onclick="ordenar(this.id)">pais</td>
 <td width="4%" class="td-headertabla">Notas</td>
-<td width="1%" class="td-headertabla"><img src="../icon/icon-ojo-pelao.gif" width="16" height="16" title="¿Activo o inactivo?"></td>
-  <td width="1%" class="td-headertabla"><img src="../icon/botonsito-confirmar-pago-done.jpg" width="15" height="15" title="Seleccionar"></td>
  </tr>
  
  '; ?>
@@ -237,6 +237,8 @@ function MM_goToURL() { //v3.0
 	 ?>
 
 <tr>
+  <td  class="fastedit-data-td"><input name="activos[]" type="checkbox" id="activos[]" value="<?=$row['id'] ?>" <?php if($row['activo']==1) echo 'checked'; ?>></td>
+  <td class="fastedit-data-td"><input name="borrados[]" type="checkbox" id="borrados[]" value="<?=$row['id'] ?>"></td>
   <td align="center" class="fastedit-data-td"><?=$row['id'] ?></td>
   
   <td class="fastedit-data-td">
@@ -267,10 +269,7 @@ function MM_goToURL() { //v3.0
   <td class="fastedit-data-td"><input name="ciudad[]" type="text" class="form-box" id="ciudad[]" value="<?=$row['ciudad'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><input name="estado[]" type="text" class="form-box" id="estado[]" value="<?=$row['estado'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><input name="pais[]" type="text" class="form-box" id="pais[]" value="<?=$row['pais'] ?>" size="20" /></td>
-  <td class="fastedit-data-td"><textarea name="notas[]" cols="25" class="form-box" id="noticias_titulo[]"><?=$row['notas'] ?>
-  </textarea></td>
-  <td  class="fastedit-data-td"><input name="activos[]" type="checkbox" id="activos[]" value="<?=$row['id'] ?>" <?php if($row['activo']==1) echo 'checked'; ?>></td>
-  <td class="fastedit-data-td"><input name="borrados[]" type="checkbox" id="borrados[]" value="<?=$row['id'] ?>"></td>
+  <td class="fastedit-data-td"><textarea name="notas[]" cols="25" class="form-box" id="noticias_titulo[]"><?=$row['notas'] ?></textarea></td>
 </tr>
 <!--fin loop de articulos--> 
 <?php
