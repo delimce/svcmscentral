@@ -60,8 +60,38 @@ $tool->autoconexion();
 						$iid = implode(',',$activos);
 						$tool->query("update cliente set activo = 1 where id in ($iid) ");
 						
+						
+						/////////para los campos adicionales
+						
+						$tool->query("delete from campo_user");
+						
+												
+						$tcampos = $tool->array_query("select id from campo where modulo = 'user' order by id");
+						
+						
+						for($w1=0;$w1<count($ids);$w1++){
+							
+							for($wi=0;$wi<count($tcampos);$wi++){
+								
+								$valores1[0] = $tcampos[$wi];
+								$valores1[1] = $ids[$w1]; 
+								$campoadic = "adicional_".$tcampos[$wi]."_".$ids[$w1];
+								$valores1[2] = $_POST[$campoadic];
+								
+								$tool->insertar2("campo_user","campo_id,user_id,valor",$valores1);
+								
+																
+							}
+						
+						}
+						
+						////////////////////////////////////
+						
 						$tool->cerrar_transaccion();
-					
+						
+						$tool->javaviso("usuarios actualizados con exito","usuarios-fastedit.php");
+						
+
 							
 					
 			}else if($_REQUEST['opcion']==2){ ////borrar usuarios
@@ -73,7 +103,7 @@ $tool->autoconexion();
 					
 				   if(!empty($borrados[0])){ 
 				   
-				   			include("../../SVsystem/class/funciones.php");
+				   			
 							$DIR = $_SESSION['DIRSERVER']; ///LA CARPETA DE ARCHIVOS ACTUAL	
 							
 							$iid = implode(',',$borrados);
@@ -81,21 +111,21 @@ $tool->autoconexion();
 							
 							//////////////////borrar todos los archivos del producto
 
-								$queryA = "(select ruta,tipo from cont_adjunto where art_id in ($iid) and tipo != 'link')
-											union( select imagen,'imagen' as tipo from articulo where id in ($iid) ) ";
+								$queryA = "select ruta from cliente_archivo where cliente_id in ($iid) ";
 										
-								$archivos = $tool->estructura_db($queryA);
+								$archivos = $tool->array_query($queryA);
 								
 								//borrando datos
 								for($i=0;$i<count($archivos);$i++){
 								
-									borrar_datac($archivos[$i]['ruta'],$archivos[$i]['tipo']);
+									@unlink("../../SVsitefiles/$DIR/usuario/doc/".$archivos[i]);
 								}
 										
 							////////////////////////////////////////////////////////
 							
 							
 							$tool->query("delete from cliente where id in ($iid) ");
+							$tool->javaviso("usuarios borrados con exito","usuarios-fastedit.php");
 							
 					}	
 			
@@ -112,6 +142,18 @@ $tool->autoconexion();
 	$cat4 = $tool->array_query("select distinct nombre from cliente_categoria where grupo = 4 order by nombre");
 	$cat5 = $tool->array_query("select distinct nombre from cliente_categoria where grupo = 5 order by nombre");
 	
+	
+	/////////campos adicionales
+	$camposTitle = $tool->estructura_db("SELECT c.nombre,c.id,c.tipo,c.valores
+												FROM
+												campo AS c
+												where c.modulo = 'user' order by orden");
+												
+	
+	$adicionales = $tool->estructura_db("SELECT campo_id,user_id,valor FROM campo_user ORDER BY user_id,campo_id");											
+	
+	/////////////////////////////
+	
 	/////en caso de ordenamiento
 	if(isset($_REQUEST['orden'])) $pordena = $_REQUEST['orden'].',';
 	$tool->query("select * from cliente a  order by $pordena id asc ");
@@ -125,7 +167,7 @@ $tool->autoconexion();
 	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<title>Edici&oacute;n r&aacute;pida de art&iacute;culos</title>
+<title>Edici&oacute;n r&aacute;pida de Usuarios</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="../estilos.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="../../SVsystem/js/utils.js"></script>
@@ -149,6 +191,35 @@ function MM_goToURL() { //v3.0
 	function ordenar(valor){
 		
 		location.replace('usuarios-fastedit.php?orden='+valor);
+		
+	}
+	
+	
+	function validarBorrados(){
+		
+		var i=0;
+		var band = 0;
+		
+		for(i=1;i<=<?=$tool->nreg ?>;i++){
+				
+		if(document.getElementById('borrados_'+i).checked==true)
+			band = 1;
+		
+		}
+		
+
+		
+		if(band==0)
+		{ alert('No hay ningun usuario seleccionado para borrar'); 
+		}else{
+			
+			document.form1.opcion.value='2'; 
+			document.form1.submit();
+			
+		}
+		
+
+		
 		
 	}
 
@@ -184,9 +255,9 @@ function MM_goToURL() { //v3.0
 
 <form name="form1" method="post" action="">
 <input name="opcion" type="hidden" id="opcion" value="1">
-<table width="4300" border="0" cellspacing="3" cellpadding="0">
+<table width="4800" border="0" cellspacing="3" cellpadding="0">
 <!--CABECERA DE LA TABLA DE ARTICULOS-->
- <?php echo $encabezado = '
+ <?php  $encabezado = '
  
  <tr>
 <td width="1%" class="td-headertabla"><img src="../icon/icon-ojo-pelao.gif" width="16" height="16" title="¿Activo o inactivo?"></td>
@@ -216,17 +287,26 @@ function MM_goToURL() { //v3.0
 <td width="3%" class="td-headertabla" id="ciudad" style="cursor:pointer" title="ordenar por ciudad" onclick="ordenar(this.id)">Ciudad</td>
 <td width="3%" class="td-headertabla" id="estado" style="cursor:pointer" title="ordenar por estado" onclick="ordenar(this.id)">Estado</td>
 <td width="3%" class="td-headertabla" id="pais" style="cursor:pointer" title="ordenar por pais" onclick="ordenar(this.id)">pais</td>
-<td width="4%" class="td-headertabla">Notas</td>
- </tr>
- 
- '; ?>
+<td width="4%" class="td-headertabla">Notas</td>';
+
+
+for($z=0;$z<count($camposTitle);$z++)
+$encabezado.= '<td width="3%" class="td-headertabla">'.$camposTitle[$z]['nombre'].'</td>';
+
+$encabezado.= '</tr> ';
+
+
+echo $encabezado;
+
+ ?>
  
  
 <!--FIN CABECERA DE LA TABLA DE ARTICULOS-->
 
 <!--loop de artículos--> 
 <?php 
-
+	
+	$j=1;
 	$ii=1; ///loop para controlar el encabezado
 	$repite = 10; ///repetir encabezado cada tantos..
 
@@ -238,7 +318,7 @@ function MM_goToURL() { //v3.0
 
 <tr>
   <td  class="fastedit-data-td"><input name="activos[]" type="checkbox" id="activos[]" value="<?=$row['id'] ?>" <?php if($row['activo']==1) echo 'checked'; ?>></td>
-  <td class="fastedit-data-td"><input name="borrados[]" type="checkbox" id="borrados[]" value="<?=$row['id'] ?>"></td>
+  <td class="fastedit-data-td"><input name="borrados[]" type="checkbox" id="borrados_<?=$j ?>" value="<?=$row['id'] ?>"></td>
   <td align="center" class="fastedit-data-td"><?=$row['id'] ?></td>
   
   <td class="fastedit-data-td">
@@ -270,11 +350,46 @@ function MM_goToURL() { //v3.0
   <td class="fastedit-data-td"><input name="estado[]" type="text" class="form-box" id="estado[]" value="<?=$row['estado'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><input name="pais[]" type="text" class="form-box" id="pais[]" value="<?=$row['pais'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><textarea name="notas[]" cols="25" class="form-box" id="noticias_titulo[]"><?=$row['notas'] ?></textarea></td>
+
+<?php 
+		for($w1=0;$w1<count($camposTitle);$w1++){
+		
+				for($wi=0;$wi<count($adicionales);$wi++){
+					
+						////campo id
+						unset($campoA);
+						$idc = 	$camposTitle[$w1]['id'];		
+					
+						if($adicionales[$wi]['user_id'] == $row['id'] && $adicionales[$wi]['campo_id'] == $idc){
+						$campoA = $adicionales[$wi]['valor'];
+						break;
+						}
+							
+
+				}
+				
+				if($camposTitle[$w1]['tipo']!="combo"){
+				?>
+               	<td class="fastedit-data-td"><input name="adicional_<?php echo  $camposTitle[$w1]['id'] ?>_<?php echo $row['id']  ?>" type="text" class="form-box" value="<?=$campoA ?>" size="20" /></td>
+               	<?
+				}else{
+					$combov = explode(',',$camposTitle[$w1]['valores']);
+					echo '<td class="fastedit-data-td">'.$tool->combo_array("adicional_".$camposTitle[$w1]['id'].'_'.$row['id'],$combov,$combov,' ',$campoA,false,'',false,false,'n-form-box').'</td>';
+					
+				}
+				
+				
+		}
+
+?>
+
+
 </tr>
 <!--fin loop de articulos--> 
 <?php
 
 	$ii++;
+	$j++;
 
  }
  
@@ -290,7 +405,7 @@ function MM_goToURL() { //v3.0
 
 
 <center>
-<input type="button" onClick="document.form1.opcion.value='2'; document.form1.submit();" class="form-button" name="Button" value=" [-] Borrar Seleccionados">  &nbsp;&nbsp;
+<input type="button" onClick="validarBorrados();" class="form-button" name="Button" value=" [-] Borrar Seleccionados">  &nbsp;&nbsp;
 <input type="button" onClick="document.form1.opcion.value='1'; document.form1.submit();" class="form-button" name="Button" value="[ok] Aplicar"> &nbsp;
 
 <input name="Reset" type="reset" class="form-button" onClick="MM_goToURL('parent','index.php');return document.MM_returnValue" value="[<]  Volver">
