@@ -57,8 +57,13 @@ $tool->autoconexion();
 						
 						$tool->query("update cliente set activo = 0");
 						$activos = $_REQUEST['activos'];
-						$iid = implode(',',$activos);
-						$tool->query("update cliente set activo = 1 where id in ($iid) ");
+						if(count($activos)>0){
+							
+							$iid = implode(',',$activos);
+							$tool->query("update cliente set activo = 1 where id in ($iid) ");
+							
+						}
+						
 						
 						
 						/////////para los campos adicionales
