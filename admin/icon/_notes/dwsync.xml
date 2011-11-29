@@ -3,4 +3,13 @@
 <file name="icon-info.gif" server="userver//var/www/svcms3/" local="129429954000000000" remote="129662392470000000" />
 <file name="icon-ojo-pelao.gif" server="userver//var/www/svcms3/" local="128792322000000000" remote="129663126990000000" />
 <file name="botonsito-confirmar-pago-done.jpg" server="userver//var/www/svcms3/" local="128792322000000000" remote="129663126990000000" />
+<file name="icon-print.gif" server="userver//var/www/svcms3/" local="128792322000000000" remote="129669242100000000" />
+<file name="icon-mail.gif" server="userver//var/www/svcms3/" local="128792322000000000" remote="129669242100000000" />
+<file name="icon-edit.gif" server="userver//var/www/svcms3/" local="128792322000000000" remote="129669242100000000" />
+<file name="icon-lupa.gif" server="userver//var/www/svcms3/" local="128792322000000000" remote="129669242100000000" />
+<file name="icon-delete.gif" server="userver//var/www/svcms3/" local="129528270600000000" remote="129669242100000000" />
+<file name="icon-user-orden-nueva.gif" server="userver//var/www/svcms3/" local="129131010000000000" remote="129669242100000000" />
+<file name="icon-user-ordenes.gif" server="userver//var/www/svcms3/" local="129131010000000000" remote="129669242100000000" />
+<file name="icon-user-pago-nuevo.gif" server="userver//var/www/svcms3/" local="129131010000000000" remote="129669242100000000" />
+<file name="icon-user-pagos.gif" server="userver//var/www/svcms3/" local="129131010000000000" remote="129669242100000000" />
 </dwsync>

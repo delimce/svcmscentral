@@ -156,7 +156,22 @@ $tool->autoconexion();
 	
 	/////en caso de ordenamiento
 	if(isset($_REQUEST['orden'])) $pordena = $_REQUEST['orden'].',';
-	$tool->query("select * from cliente a  order by $pordena id asc ");
+	
+	////en caso de que viene de una busqueda avanzada
+	if(isset($_REQUEST['too'])){
+		
+		$Bids = implode(',',$_REQUEST['too']);
+		
+		$_SESSION['DEBUSQUEDA'] = "where a.id in ($Bids) ";
+	}else if(isset($_REQUEST['Nu'])){
+		
+		unset($_SESSION['DEBUSQUEDA']);
+		
+	}
+	
+	//////////////////////////////////////////////
+	
+	$tool->query("select * from cliente a  {$_SESSION['DEBUSQUEDA']} order by $pordena id asc ");
 	
 
 
@@ -264,13 +279,13 @@ function MM_goToURL() { //v3.0
 <td width="1%" class="td-headertabla"><img src="../icon/botonsito-confirmar-pago-done.jpg" width="15" height="15" title="Seleccionar"></td>
 <td width="3%" align="center" class="td-headertabla" id="id" style="cursor:pointer" title="ordenar por ID" onclick="ordenar(this.id)">ID</td>
 <td width="3%" class="td-headertabla" id="origen" style="cursor:pointer" title="ordenar por Origen" onclick="ordenar(this.id)">Origen</td>
+<td width="3%" class="td-headertabla" id="nombre" style="cursor:pointer" title="ordenar por nombre" onclick="ordenar(this.id)">Nombre</td>
 <td width="7%" class="td-headertabla">Categoria 1</td>
 <td width="8%" class="td-headertabla">Categoria 2</td>
 <td width="7%" class="td-headertabla">Categoria 3</td>
 <td width="7%" class="td-headertabla">Categoria 4</td>
 <td width="6%" class="td-headertabla">Categoria 5</td>
 <td width="3%" class="td-headertabla">Rif</td>
-<td width="3%" class="td-headertabla" id="nombre" style="cursor:pointer" title="ordenar por nombre" onclick="ordenar(this.id)">Nombre</td>
 <td width="3%" class="td-headertabla">Password</td>
 <td width="3%" class="td-headertabla">Email</td>
 <td width="3%" class="td-headertabla">Email2</td>
@@ -326,13 +341,13 @@ echo $encabezado;
     <input name="ids[]" type="hidden" id="ids[]" value="<?=$row['id'] ?>">
   </div>
   <input name="origen[]" type="text" class="form-box" id="origen[]" value="<?=$row['origen'] ?>" size="20"></td>
+  <td class="fastedit-data-td"><input name="nombre[]" type="text" class="form-box" id="nombre[]" value="<?=$row['nombre'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria1[]",$cat1,$cat1,' ',$row['categoria1'],false,'',false,false,'n-form-box'); ?>&nbsp;</td>
   <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria2[]",$cat2,$cat2,' ',$row['categoria2'],false,'',false,false,'n-form-box'); ?></td>
   <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria3[]",$cat3,$cat3,' ',$row['categoria3'],false,'',false,false,'n-form-box'); ?></td>
   <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria4[]",$cat4,$cat4,' ',$row['categoria4'],false,'',false,false,'n-form-box'); ?></td>
   <td class="fastedit-data-td"><?php echo $tool->combo_array("categoria5[]",$cat5,$cat5,' ',$row['categoria5'],false,'',false,false,'n-form-box'); ?></td>
   <td class="fastedit-data-td"><input name="rif[]" type="text" class="form-box" id="rif[]" value="<?=$row['rif'] ?>" size="20" /></td>
-  <td class="fastedit-data-td"><input name="nombre[]" type="text" class="form-box" id="nombre[]" value="<?=$row['nombre'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><input name="password[]" type="text" class="form-box" id="password[]" value="<?=$row['password'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><input name="email[]" type="text" class="form-box" id="email[]" value="<?=$row['email'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><input name="email2[]" type="text" class="form-box" id="email2[]" value="<?=$row['email2'] ?>" size="20" /></td>
