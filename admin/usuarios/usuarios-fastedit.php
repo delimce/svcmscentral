@@ -156,7 +156,22 @@ $tool->autoconexion();
 	
 	/////en caso de ordenamiento
 	if(isset($_REQUEST['orden'])) $pordena = $_REQUEST['orden'].',';
-	$tool->query("select * from cliente a  order by $pordena id asc ");
+	
+	////en caso de que viene de una busqueda avanzada
+	if(isset($_REQUEST['too'])){
+		
+		$Bids = implode(',',$_REQUEST['too']);
+		
+		$_SESSION['DEBUSQUEDA'] = "where a.id in ($Bids) ";
+	}else if(isset($_REQUEST['Nu'])){
+		
+		unset($_SESSION['DEBUSQUEDA']);
+		
+	}
+	
+	//////////////////////////////////////////////
+	
+	$tool->query("select * from cliente a  {$_SESSION['DEBUSQUEDA']} order by $pordena id asc ");
 	
 
 

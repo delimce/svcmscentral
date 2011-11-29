@@ -3,4 +3,6 @@
 <file name="database.php" server="userver//var/www/svcms3/" local="129499938000000000" remote="129662392460000000" />
 <file name="tools.php" server="userver//var/www/svcms3/" local="129666550073248468" remote="129666550040000000" />
 <file name="funciones.php" server="userver//var/www/svcms3/" local="129529254000000000" remote="129663126990000000" />
+<file name="clases.php" server="userver//var/www/svcms3/" local="129166434000000000" remote="129669242100000000" />
+<file name="paginas.php" server="userver//var/www/svcms3/" local="129166434000000000" remote="129669242100000000" />
 </dwsync>

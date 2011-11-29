@@ -294,7 +294,7 @@ location.replace('busquedac.php?orden2='+valor+'&orden1='+valor2);
 </div>
 
 
-<form name="form1" method="post" action="../opciones-sm.php">
+<form name="form1" id="form1" method="post" action="../opciones-sm.php">
 
 
   <table width="99%" border="0" cellspacing="0" cellpadding="0">
@@ -312,7 +312,7 @@ location.replace('busquedac.php?orden2='+valor+'&orden1='+valor2);
 <input name="button" type="button" class="form-button" id="button" onClick="if (confirm('¿Esta seguro que desea borrar los usuarios ?')){
   document.form1.action = 'borrarl.php'; document.form1.submit(); } " value="Borrar usuarios Seleccionados" style="display:none">
       &nbsp;
-<input name="boton" type="submit" class="form-button" id="boton" value="Enviar E-mail a Seleccionados"><a  class="instruccion"><img src="../icon/icon-info.gif" border="0"><span>Enviar Correo electrónico a usuarios seleccionados</span></a>
+<input name="boton" type="button" class="form-button" id="boton" value="Enviar E-mail a Seleccionados"><a  class="instruccion"><img src="../icon/icon-info.gif" border="0"><span>Enviar Correo electrónico a usuarios seleccionados</span></a>
 
    &nbsp;  <input name="boton2" onClick="location.replace('index.php');" type="button" class="form-button" id="boton2" value="Volver a Buscar">
 
@@ -499,9 +499,10 @@ location.replace('busquedac.php?orden2='+valor+'&orden1='+valor2);
 <input name="button" type="button" class="form-button" id="button" onClick="if (confirm('¿Esta seguro que desea borrar los usuarios ?')){
   document.form1.action = 'borrarl.php'; document.form1.submit(); } " value="Borrar usuarios Seleccionados" style="display:none">
       &nbsp;
-<input name="boton" type="submit" class="form-button" id="boton" value="Enviar E-mail a Seleccionados"><a  class="instruccion"><img src="../icon/icon-info.gif" border="0"><span>Enviar Correo electrónico a usuarios seleccionados</span></a>
+<input name="boton" type="submit" class="form-button" id="boton" value="Enviar E-mail a Seleccionados"><a  class="instruccion"><img src="../icon/icon-info.gif" border="0"><span>Enviar Correo electrónico a usuarios seleccionados</span>&nbsp;</a>
 
-   &nbsp;  <input name="boton2" onClick="location.replace('index.php');" type="button" class="form-button" id="boton2" value="Volver a Buscar">
+   &nbsp;
+   <input name="boton3" type="button" class="form-button" id="boton3" onClick="document.form1.action = 'usuarios-fastedit.php'; document.form1.submit();"  value="Fastedit de seleccionados" /><input name="boton2" onClick="history.back();" type="button" class="form-button" id="boton2" value="Volver a Buscar">
 
 
 
