@@ -314,6 +314,10 @@ location.replace('busquedac.php?orden2='+valor+'&orden1='+valor2);
       &nbsp;
 <input name="boton" type="button" class="form-button" id="boton" value="Enviar E-mail a Seleccionados"><a  class="instruccion"><img src="../icon/icon-info.gif" border="0"><span>Enviar Correo electrónico a usuarios seleccionados</span></a>
 
+&nbsp;
+
+<input name="boton3" type="button" class="form-button" id="boton3" onClick="document.form1.action = 'usuarios-fastedit.php'; document.form1.submit();"  value="Edici&oacute;n R&aacute;pida de Seleccionados" /><a  class="instruccion"><img src="../icon/icon-info.gif" border="0"><span>Editar todos los datos de los usuarios seleccionados en una sola página. Sea Cuidadoso en esta sección pues aquí podrá borrar a todos los usuarios en un solo click.</span></a>
+
    &nbsp;  <input name="boton2" onClick="location.replace('index.php');" type="button" class="form-button" id="boton2" value="Volver a Buscar">
 
 </td>
@@ -494,7 +498,7 @@ location.replace('busquedac.php?orden2='+valor+'&orden1='+valor2);
     <td align="center">
 
 <input name="button2" type="button" class="form-button" id="button2" onClick="if (confirm('&iquest;Esta seguro que desea activar los usuarios ?')){
-  document.form1.action = 'activar.php'; document.form1.submit(); } " value="Dar Bienvenida Seleccionados"><a  href="../opciones-mensajes.php" target="_blank" class="instruccion" style="cursor:pointer"><img src="../icon/icon-info.gif" border="0"><span>Esta opción , ademas de activar a sus usuarios para que puedan acceder a su pagina privada, les envía el correo automático de Bienvenida al Usuario . Usted puede configurar el contenido de ese e-mail. Haga click en el ícono que despliega este mensaje (!) para configurar los Emails Automáticos</span></a>
+  document.form1.action = 'activar.php'; document.form1.submit(); } " value="Dar Bienvenida a Seleccionados"><a  href="../opciones-mensajes.php" target="_blank" class="instruccion" style="cursor:pointer"><img src="../icon/icon-info.gif" border="0"><span>Esta opción , ademas de activar a sus usuarios para que puedan acceder a su pagina privada, les envía el correo automático de Bienvenida al Usuario . Usted puede configurar el contenido de ese e-mail. Haga click en el ícono que despliega este mensaje (!) para configurar los Emails Automáticos</span></a>
       &nbsp;
 <input name="button" type="button" class="form-button" id="button" onClick="if (confirm('¿Esta seguro que desea borrar los usuarios ?')){
   document.form1.action = 'borrarl.php'; document.form1.submit(); } " value="Borrar usuarios Seleccionados" style="display:none">
@@ -502,7 +506,10 @@ location.replace('busquedac.php?orden2='+valor+'&orden1='+valor2);
 <input name="boton" type="submit" class="form-button" id="boton" value="Enviar E-mail a Seleccionados"><a  class="instruccion"><img src="../icon/icon-info.gif" border="0"><span>Enviar Correo electrónico a usuarios seleccionados</span>&nbsp;</a>
 
    &nbsp;
-   <input name="boton3" type="button" class="form-button" id="boton3" onClick="document.form1.action = 'usuarios-fastedit.php'; document.form1.submit();"  value="Fastedit de seleccionados" /><input name="boton2" onClick="history.back();" type="button" class="form-button" id="boton2" value="Volver a Buscar">
+   <input name="boton3" type="button" class="form-button" id="boton3" onClick="document.form1.action = 'usuarios-fastedit.php'; document.form1.submit();"  value="Edici&oacute;n R&aacute;pida de Seleccionados" /><a  class="instruccion"><img src="../icon/icon-info.gif" border="0"><span>Editar todos los datos de los usuarios seleccionados en una sola página. Sea Cuidadoso en esta sección pues aquí podrá borrar a todos los usuarios en un solo click.</span></a>
+   &nbsp;
+
+<input name="boton2" onClick="history.back();" type="button" class="form-button" id="boton2" value="Volver a Buscar">
 
 
 

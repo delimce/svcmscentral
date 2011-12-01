@@ -9,6 +9,23 @@ include("security.php");
 $tool = new tools();
 $tool->autoconexion();
 
+
+	////en caso de que viene de una busqueda avanzada
+	if(isset($_REQUEST['too'])){
+
+		$Bids = implode(',',$_REQUEST['too']);
+
+		$_SESSION['DEBUSQUEDA'] = "where a.id in ($Bids) ";
+	}else if(isset($_REQUEST['Nu'])){
+
+		unset($_SESSION['DEBUSQUEDA']);
+
+	}
+
+	//////////////////////////////////////////////
+
+
+
 	
 	if(isset($_REQUEST['ids'])){
 	
@@ -55,15 +72,10 @@ $tool->autoconexion();
 									
 						}
 						
-						$tool->query("update cliente set activo = 0");
+						$tool->query("update cliente a set activo = 0 {$_SESSION['DEBUSQUEDA']} ");
 						$activos = $_REQUEST['activos'];
-						if(count($activos)>0){
-							
-							$iid = implode(',',$activos);
-							$tool->query("update cliente set activo = 1 where id in ($iid) ");
-							
-						}
-						
+						$iid = implode(',',$activos);
+						$tool->query("update cliente set activo = 1 where id in ($iid) ");
 						
 						
 						/////////para los campos adicionales
@@ -162,19 +174,7 @@ $tool->autoconexion();
 	/////en caso de ordenamiento
 	if(isset($_REQUEST['orden'])) $pordena = $_REQUEST['orden'].',';
 	
-	////en caso de que viene de una busqueda avanzada
-	if(isset($_REQUEST['too'])){
-		
-		$Bids = implode(',',$_REQUEST['too']);
-		
-		$_SESSION['DEBUSQUEDA'] = "where a.id in ($Bids) ";
-	}else if(isset($_REQUEST['Nu'])){
-		
-		unset($_SESSION['DEBUSQUEDA']);
-		
-	}
-	
-	//////////////////////////////////////////////
+
 	
 	$tool->query("select * from cliente a  {$_SESSION['DEBUSQUEDA']} order by $pordena id asc ");
 	
@@ -254,20 +254,30 @@ function MM_goToURL() { //v3.0
 
 <body>
 
-<?php include ("../n-encabezado.php")?>
-<div id="ncuerpo" style="width:100%;">
 
-<div id="ncontenedor" style="width:99%; margin:0 auto 0 auto;">
+<div id="ncuerpo" style="width:100%; margin:0; padding:0; top:0; background:url(/admin/SVimages/nfondo.jpg) repeat fixed 0 0;">
+<div id="ncontenedor" style="width:100%; margin:0 auto;">
+
+<div id="nnavbar" style="width:100%;">
+<a onclick="MM_goToURL('parent','index.php');return document.MM_returnValue"  class="especial" style="background-color:#C00; color:#fff;">[x]Cerrar</a>
 
 
+
+<a class="especial" style="background-color:#039; color:#fff; cursor:pointer;" onClick="validarBorrados();" >[-] Borrar Seleccionados</a>
+
+
+<a class="especial" style="background-color:#039; color:#fff;cursor:pointer;" onClick="document.form1.opcion.value='1'; document.form1.submit();">Guardar y Quedarse</a>
+
+
+
+
+</div>
 
 
 
 <div id="ntitulo">Tablero de edici&oacute;n r&aacute;pida de Usuarios</div>
 <div id="ninstrucciones">
-<p>Aqui usted podr&aacute; editar todos los campos de todos los usuarios de manera r&aacute;pida  y c&oacute;moda. Adem&aacute;s de los cambios particulares que puede realizar en cada uno, puede seleccionar (en el checkbox de la extrema derecha) los usuarios a los que desee aplicar las acciones masivas ubicadas al final
-        de la p&aacute;gina. Usted puede  borrar varios &iacute;tems en un solo movimiento. <strong>Proceda
-        con cautela.</strong></p>
+<p>Aqui usted podr&aacute; editar todos los campos de todos los usuarios de manera r&aacute;pida  y c&oacute;moda. Adem&aacute;s de los cambios particulares que puede realizar en cada uno, puede seleccionar (en el checkbox de la izquierda) los usuarios a los que desee aplicar las acciones masivas ubicadas al final de la p&aacute;gina. Usted puede  borrar varios &iacute;tems en un solo movimiento. <strong>Proceda con cautela.</strong></p>
 </div>
 
 
@@ -275,43 +285,43 @@ function MM_goToURL() { //v3.0
 
 <form name="form1" method="post" action="">
 <input name="opcion" type="hidden" id="opcion" value="1">
-<table width="4800" border="0" cellspacing="3" cellpadding="0">
-<!--CABECERA DE LA TABLA DE ARTICULOS-->
+<table width="4800" border="0" cellspacing="3" cellpadding="0" id="tabla-fastedit-usuarios">
+<!--CABECERA DE LA TABLA DE USUARIOS-->
  <?php  $encabezado = '
  
  <tr>
-<td width="1%" class="td-headertabla"><img src="../icon/icon-ojo-pelao.gif" width="16" height="16" title="¿Activo o inactivo?"></td>
-<td width="1%" class="td-headertabla"><img src="../icon/botonsito-confirmar-pago-done.jpg" width="15" height="15" title="Seleccionar"></td>
-<td width="3%" align="center" class="td-headertabla" id="id" style="cursor:pointer" title="ordenar por ID" onclick="ordenar(this.id)">ID</td>
-<td width="3%" class="td-headertabla" id="origen" style="cursor:pointer" title="ordenar por Origen" onclick="ordenar(this.id)">Origen</td>
-<td width="3%" class="td-headertabla" id="nombre" style="cursor:pointer" title="ordenar por nombre" onclick="ordenar(this.id)">Nombre</td>
-<td width="7%" class="td-headertabla">Categoria 1</td>
-<td width="8%" class="td-headertabla">Categoria 2</td>
-<td width="7%" class="td-headertabla">Categoria 3</td>
-<td width="7%" class="td-headertabla">Categoria 4</td>
-<td width="6%" class="td-headertabla">Categoria 5</td>
-<td width="3%" class="td-headertabla">Rif</td>
-<td width="3%" class="td-headertabla">Password</td>
-<td width="3%" class="td-headertabla">Email</td>
-<td width="3%" class="td-headertabla">Email2</td>
-<td width="3%" class="td-headertabla">Web</td>
-<td width="3%" class="td-headertabla">Empresa</td>
-<td width="3%" class="td-headertabla">Actividad</td>
-<td width="3%" class="td-headertabla">Cargo</td>
-<td width="3%" class="td-headertabla">TLF1</td>
-<td width="3%" class="td-headertabla">TLF2</td>
-<td width="3%" class="td-headertabla">Celular</td>
-<td width="3%" class="td-headertabla">Fax</td>
-<td width="5%" class="td-headertabla">Direcci&oacute;n</td>
-<td width="3%" class="td-headertabla">Zip</td>
-<td width="3%" class="td-headertabla" id="ciudad" style="cursor:pointer" title="ordenar por ciudad" onclick="ordenar(this.id)">Ciudad</td>
-<td width="3%" class="td-headertabla" id="estado" style="cursor:pointer" title="ordenar por estado" onclick="ordenar(this.id)">Estado</td>
-<td width="3%" class="td-headertabla" id="pais" style="cursor:pointer" title="ordenar por pais" onclick="ordenar(this.id)">pais</td>
-<td width="4%" class="td-headertabla">Notas</td>';
+<td class="td-headertabla"><img src="../icon/icon-ojo-pelao.gif" width="16" height="16" title="¿Activo o inactivo?"></td>
+<td class="td-headertabla"><img src="../icon/botonsito-confirmar-pago-done.jpg" width="15" height="15" title="Seleccionar"></td>
+<td class="td-headertabla" id="id" style="cursor:pointer" title="ordenar por ID" onclick="ordenar(this.id)">ID</td>
+<td class="td-headertabla" id="origen" style="cursor:pointer;display:none;" title="ordenar por Origen" onclick="ordenar(this.id)">Origen</td>
+<td class="td-headertabla" id="nombre" style="cursor:pointer" title="ordenar por nombre" onclick="ordenar(this.id)">Nombre</td>
+<td class="td-headertabla">Categoria 1</td>
+<td class="td-headertabla">Categoria 2</td>
+<td class="td-headertabla">Categoria 3</td>
+<td class="td-headertabla">Categoria 4</td>
+<td class="td-headertabla">Categoria 5</td>
+<td class="td-headertabla">Rif</td>
+<td class="td-headertabla">Password</td>
+<td class="td-headertabla">Email</td>
+<td class="td-headertabla">Email2</td>
+<td class="td-headertabla">Web</td>
+<td class="td-headertabla">Empresa</td>
+<td class="td-headertabla">Actividad</td>
+<td class="td-headertabla">Cargo</td>
+<td class="td-headertabla">TLF1</td>
+<td class="td-headertabla">TLF2</td>
+<td class="td-headertabla">Celular</td>
+<td class="td-headertabla">Fax</td>
+<td class="td-headertabla">Direcci&oacute;n</td>
+<td class="td-headertabla">Zip</td>
+<td class="td-headertabla" id="ciudad" style="cursor:pointer" title="ordenar por ciudad" onclick="ordenar(this.id)">Ciudad</td>
+<td class="td-headertabla" id="estado" style="cursor:pointer" title="ordenar por estado" onclick="ordenar(this.id)">Estado</td>
+<td class="td-headertabla" id="pais" style="cursor:pointer" title="ordenar por pais" onclick="ordenar(this.id)">pais</td>
+<td class="td-headertabla">Notas</td>';
 
 
 for($z=0;$z<count($camposTitle);$z++)
-$encabezado.= '<td width="3%" class="td-headertabla">'.$camposTitle[$z]['nombre'].'</td>';
+$encabezado.= '<td class="td-headertabla">'.$camposTitle[$z]['nombre'].'</td>';
 
 $encabezado.= '</tr> ';
 
@@ -321,7 +331,7 @@ echo $encabezado;
  ?>
  
  
-<!--FIN CABECERA DE LA TABLA DE ARTICULOS-->
+<!--FIN CABECERA DE LA TABLA DE USUARIOS-->
 
 <!--loop de artículos--> 
 <?php 
@@ -337,11 +347,11 @@ echo $encabezado;
 	 ?>
 
 <tr>
-  <td  class="fastedit-data-td"><input name="activos[]" type="checkbox" id="activos[]" value="<?=$row['id'] ?>" <?php if($row['activo']==1) echo 'checked'; ?>></td>
+  <td class="fastedit-data-td"><input name="activos[]" type="checkbox" id="activos[]" value="<?=$row['id'] ?>" <?php if($row['activo']==1) echo 'checked'; ?>></td>
   <td class="fastedit-data-td"><input name="borrados[]" type="checkbox" id="borrados_<?=$j ?>" value="<?=$row['id'] ?>"></td>
   <td align="center" class="fastedit-data-td"><?=$row['id'] ?></td>
   
-  <td class="fastedit-data-td">
+  <td class="fastedit-data-td" style="display:none;">
   <div class="fastedit-categorias"><?php echo $row['categoria']  ?>
     <input name="ids[]" type="hidden" id="ids[]" value="<?=$row['id'] ?>">
   </div>
@@ -369,7 +379,7 @@ echo $encabezado;
   <td class="fastedit-data-td"><input name="ciudad[]" type="text" class="form-box" id="ciudad[]" value="<?=$row['ciudad'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><input name="estado[]" type="text" class="form-box" id="estado[]" value="<?=$row['estado'] ?>" size="20" /></td>
   <td class="fastedit-data-td"><input name="pais[]" type="text" class="form-box" id="pais[]" value="<?=$row['pais'] ?>" size="20" /></td>
-  <td class="fastedit-data-td"><textarea name="notas[]" cols="25" class="form-box" id="noticias_titulo[]"><?=$row['notas'] ?></textarea></td>
+  <td class="fastedit-data-td"><textarea name="notas[]" cols="25" rows="1" class="form-box" id="noticias_titulo[]"><?=$row['notas'] ?></textarea></td>
 
 <?php 
 		for($w1=0;$w1<count($camposTitle);$w1++){
@@ -405,7 +415,7 @@ echo $encabezado;
 
 
 </tr>
-<!--fin loop de articulos--> 
+
 <?php
 
 	$ii++;
@@ -420,13 +430,13 @@ echo $encabezado;
 
 
 
-<!--FIN LISTADO DE ARTÍCULOS-->
+
 </form>
 
 
 <center>
-<input type="button" onClick="validarBorrados();" class="form-button" name="Button" value=" [-] Borrar Seleccionados">  &nbsp;&nbsp;
-<input type="button" onClick="document.form1.opcion.value='1'; document.form1.submit();" class="form-button" name="Button" value="[ok] Aplicar"> &nbsp;
+<input type="button" onClick="validarBorrados();" class="form-button" name="Button" value=" [-] Borrar Seleccionados">  &nbsp;
+<input type="button" onClick="document.form1.opcion.value='1'; document.form1.submit();" class="form-button" name="Button" value="[ok] Aplicar Cambios"> &nbsp;
 
 <input name="Reset" type="reset" class="form-button" onClick="MM_goToURL('parent','index.php');return document.MM_returnValue" value="[<]  Volver">
 
@@ -439,10 +449,10 @@ echo $encabezado;
 <!-- termina ncontenido -->
 </div>
 <?php // include ("../n-include-mensajes.php")?>
-<div id="nnavbar"><?php include "n-include-menu.php"?></div>
+
 </div>
 </div>
-<?php include ("../n-footer.php")?>
+<?php // include ("../n-footer.php")?>
 
 
 
